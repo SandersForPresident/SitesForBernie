@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     less = require('gulp-less'),
     jscs = require('gulp-jscs'),
-    jshint = require('gulp-jshint'),
+    jshint = require('gulp-jshint');
 
 gulp.task('styles', function () {
   return gulp.src('assets/less/main.less')
