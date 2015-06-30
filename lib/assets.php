@@ -1,6 +1,6 @@
 <?php
 
-namespace Sanders\Config;
+namespace SandersForPresident\Wordpress\Config;
 
 function assets () {
   wp_enqueue_style('sanders_css', get_template_directory_uri() . '/assets/dist/main.css');

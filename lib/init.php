@@ -1,6 +1,6 @@
 <?php
 
-namespace Sanders\Init;
+namespace SandersForPresident\Wordpress\Init;
 
 /**
  * Theme Setup
