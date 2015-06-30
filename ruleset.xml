@@ -21,7 +21,7 @@
   </rule>
 
   <!-- Allow PHP closing tags on templates -->
-  <rule ref="PSR2.Files.ClosingTag.NotAllowed">
+  <!--rule ref="PSR2.Files.ClosingTag.NotAllowed">
     <exclude-pattern>footer.php</exclude-pattern>
     <exclude-pattern>header.php</exclude-pattern>
     <exclude-pattern>404.php</exclude-pattern>
@@ -30,7 +30,7 @@
     <exclude-pattern>single.php</exclude-pattern>
     <exclude-pattern>archive.php</exclude-patern>
     <exclude-pattern>search.php</exclude-pattern>
-  </rule>
+  </rule-->
 
   <!-- Force 2 spaces indentation -->
   <rule ref="Generic.WhiteSpace.ScopeIndent">
