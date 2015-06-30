@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php if (!have_posts()): ?>
+<?php if (!have_posts()) : ?>
   Sorry, no results were found.
 <?php endif; ?>
 
