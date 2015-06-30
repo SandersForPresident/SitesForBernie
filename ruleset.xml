@@ -29,6 +29,7 @@
     <exclude-pattern>page.php</exclude-pattern>
     <exclude-pattern>single.php</exclude-pattern>
     <exclude-pattern>archive.php</exclude-patern>
+    <exclude-pattern>search.php</exclude-pattern>
   </rule>
 
   <!-- Force 2 spaces indentation -->
