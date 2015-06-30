@@ -20,19 +20,15 @@
     <exclude name="PSR2.Methods.FunctionCallSignature.Indent"/>
   </rule>
 
-  <!-- Don't require a blank line after the last `use` in templates/ directory -->
-  <rule ref="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse">
-    <exclude-pattern>templates/*</exclude-pattern>
-  </rule>
-
   <!-- Allow PHP closing tags on templates -->
   <rule ref="PSR2.Files.ClosingTag.NotAllowed">
-    <exclude-pattern>templates/*</exclude-pattern>
+    <exclude-pattern>footer.php</exclude-pattern>
+    <exclude-pattern>header.php</exclude-pattern>
     <exclude-pattern>404.php</exclude-pattern>
     <exclude-pattern>index.php</exclude-pattern>
     <exclude-pattern>page.php</exclude-pattern>
     <exclude-pattern>single.php</exclude-pattern>
-    <exclude-pattern>template-custom.php</exclude-pattern>
+    <exclude-pattern>archive.php</exclude-patern>
   </rule>
 
   <!-- Force 2 spaces indentation -->
