@@ -1,0 +1,9 @@
+{
+  "name": "SandersForPresident",
+  "version": "1.0.0",
+  "authors": [
+    "Atticus White <contact@atticuswhite.com>"
+  ],
+  "description": "SandersForPresident resuable WordPress theme",
+  "license": "MIT"
+}
