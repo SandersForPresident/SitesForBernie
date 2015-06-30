@@ -26,6 +26,5 @@ install:
 
 script:
   - npm run build
-  - npm run jshint
-  - npm run jscs
+  - npm run lint
   - phpcs --standard=ruleset.xml --extensions=php -n -s .

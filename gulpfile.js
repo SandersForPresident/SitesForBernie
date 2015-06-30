@@ -1,10 +1,19 @@
 var gulp = require('gulp'),
-    less = require('gulp-less');
+    less = require('gulp-less'),
+    jscs = require('gulp-jscs'),
+    jshint = require('gulp-jshint'),
 
 gulp.task('styles', function () {
-  gulp.src('assets/less/main.less')
+  return gulp.src('assets/less/main.less')
   .pipe(less())
   .pipe(gulp.dest('assets/dist'));
+});
+
+gulp.task('lint', function () {
+  return gulp.src('scripts/js/**/*.js')
+  .pipe(jscs())
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('build', ['styles']);

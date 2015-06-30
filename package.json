@@ -4,7 +4,8 @@
   "description": "SandersForPresident resuable WordPress theme",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build",
+    "lint": "gulp lint"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/SandersForPresident/Wordpress",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-jscs": "^1.6.0",
     "gulp-jshint": "^1.11.1",
     "gulp-less": "^3.0.3",
     "jshint-stylish": "^2.0.1"
