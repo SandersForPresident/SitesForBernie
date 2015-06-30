@@ -5,5 +5,8 @@
     "Atticus White <contact@atticuswhite.com>"
   ],
   "description": "SandersForPresident resuable WordPress theme",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
 }
