@@ -1,0 +1,19 @@
+{
+  "name": "SandersForPresident",
+  "version": "1.0.0",
+  "description": "SandersForPresident resuable WordPress theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SandersForPresident/Wordpress.git"
+  },
+  "author": "Atticus White <contact@atticuswhite.com> (http://atticuswhite.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SandersForPresident/Wordpress/issues"
+  },
+  "homepage": "https://github.com/SandersForPresident/Wordpress"
+}
