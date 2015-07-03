@@ -18,7 +18,7 @@ class EventModel extends PostModel {
   }
 
   function getDate() {
-    return date('l F n, Y', strtotime($this->date));
+    return self::formatDate($this->date);
   }
 
   function hasTime() {
@@ -31,6 +31,10 @@ class EventModel extends PostModel {
 
   function getLocationCopy() {
     return $this->location['address'];
+  }
+
+  public static function formatDate ($date) {
+    return date('l F n, Y', strtotime($date));
   }
 
 }

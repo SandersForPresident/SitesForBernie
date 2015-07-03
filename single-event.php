@@ -1,9 +1,8 @@
 <?php
-use SandersForPresident\Wordpress\Models\EventModel;
-
-get_header();
-the_post();
-$event = new EventModel(get_the_id());
+  use SandersForPresident\Wordpress\Models\EventModel;
+  get_header();
+  the_post();
+  $event = new EventModel(get_the_id());
 ?>
 
 <article class="container">
