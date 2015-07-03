@@ -1,5 +1,6 @@
 <?php
   use SandersForPresident\Wordpress\Models\HeaderModel;
+
   $header = new HeaderModel();
 ?>
 <!doctype html>

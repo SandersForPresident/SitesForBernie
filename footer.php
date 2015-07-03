@@ -1,7 +1,8 @@
 <?php
   use SandersForPresident\Wordpress\Models\FooterModel;
+
   $footer = new FooterModel();
- ?>
+?>
 
   <footer>
     <div class="container">

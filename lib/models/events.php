@@ -3,18 +3,16 @@
 namespace SandersForPresident\Wordpress\Models;
 
 class EventsModel extends BaseModel {
+  public $events = [];
 
-  var $events = [];
-
-  function __construct() {
+  public function __construct() {
     $this->loadEvents();
   }
 
-  function loadEvents() {
+  public function loadEvents() {
     while (have_posts()) {
       the_post();
       $this->events[] = new EventModel(get_the_id());
     }
   }
-
 }

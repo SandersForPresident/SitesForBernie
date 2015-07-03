@@ -2,7 +2,6 @@
 
 namespace SandersForPresident\Wordpress\Init;
 
-
 /**
  * Theme Setup
  */
@@ -22,7 +21,7 @@ add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 /**
  * Registers nav menus
  */
-function nav_menus_init () {
+function nav_menus_init() {
   register_nav_menus(array (
     'header' => 'Site Navigation',
     'footer_social' => 'Social Links',

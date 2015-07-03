@@ -3,13 +3,13 @@
 namespace SandersForPresident\Wordpress\Models;
 
 class HeaderModel extends BaseModel {
-  var $logo;
+  public $logo;
 
-  function __construct() {
+  public function __construct() {
     $this->logo = get_field('logo', 'options');
   }
 
-  function getLogo() {
+  public function getLogo() {
     return $this->logo['sizes']['thumbnail'];
   }
 }

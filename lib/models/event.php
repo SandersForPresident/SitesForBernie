@@ -3,38 +3,34 @@
 namespace SandersForPresident\Wordpress\Models;
 
 class EventModel extends PostModel {
-  var $location;
-  var $date;
-  var $time;
-  var $title;
-  var $description;
+  public $location;
+  public $date;
+  public $time;
 
-
-  function __construct ($postID = false) {
+  public function __construct($postID = false) {
     parent::__construct($postID);
     $this->location = get_field('location', $this->postID);
     $this->date = get_field('date', $this->postID);
     $this->time = get_field('time', $this->postID);
   }
 
-  function getDate() {
+  public function getDate() {
     return self::formatDate($this->date);
   }
 
-  function hasTime() {
+  public function hasTime() {
     return !empty($this->time);
   }
 
-  function hasLocation() {
+  public function hasLocation() {
     return !empty($this->location);
   }
 
-  function getLocationCopy() {
+  public function getLocationCopy() {
     return $this->location['address'];
   }
 
-  public static function formatDate ($date) {
+  public static function formatDate($date) {
     return date('l F j, Y', strtotime($date));
   }
-
 }

@@ -3,8 +3,11 @@
 namespace SandersForPresident\Wordpress\Models;
 
 class PostModel extends BaseModel {
+  public $title;
+  public $content;
+  public $permalink;
 
-  function __construct ($postID = false) {
+  public function __construct($postID = false) {
     global $post;
     $this->postID = $postID ? $postID : $post->ID;
 
@@ -13,12 +16,11 @@ class PostModel extends BaseModel {
     $this->permalink = get_permalink($this->postID);
   }
 
-  function getContent() {
+  public function getContent() {
     return apply_filters('the_content', $this->content);
   }
 
-  function getTitle() {
+  public function getTitle() {
     return apply_filters('the_title', $this->title);
   }
-
 }
