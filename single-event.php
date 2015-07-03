@@ -1,7 +1,18 @@
-<?php get_header(); ?>
-<?php while(have_posts()) : the_post(); ?>
-  <article>
-    <h2><?php the_title(); ?></h2>
-  </article>
-<?php endwhile; ?>
+<?php
+use SandersForPresident\Wordpress\Models\EventModel;
+
+get_header();
+$event = new EventModel(get_the_id());
+?>
+
+<article class="container">
+  <div class="page-container">
+    <div class="page-title">
+      <h2>Mark your calendar</h2>
+      <h1><?php echo $event->title; ?></h1>
+    </div>
+
+  </div>
+</article>
+
 <?php get_footer(); ?>

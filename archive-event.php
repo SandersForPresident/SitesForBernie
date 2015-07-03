@@ -1,8 +1,8 @@
 <?php
-  use SandersForPresident\Wordpress\Models;
+  use SandersForPresident\Wordpress\Models\EventsModel;
 
   get_header();
-  $EventsModel = new Models\EventsModel();
+  $EventsModel = new EventsModel();
 ?>
 
 <div class="container">

@@ -1,6 +1,6 @@
 <?php
-  use SandersForPresident\Wordpress\Models;
-  $footer = new Models\FooterModel();
+  use SandersForPresident\Wordpress\Models\FooterModel;
+  $footer = new FooterModel();
  ?>
 
   <footer>
