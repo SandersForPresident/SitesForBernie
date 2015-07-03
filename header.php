@@ -7,3 +7,12 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
+
+    <header>
+      <div class="container">
+        <a href="/" class="logo"><img src="http://placehold.it/200x100" /></a>
+        <nav>
+          <?php wp_nav_menu(array('menu' => 'header')); ?>
+        </nav>
+      </div>
+    </header>
