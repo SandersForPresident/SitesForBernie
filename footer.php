@@ -1,12 +1,7 @@
 <?php
   use SandersForPresident\Wordpress\Models;
   $footer = new Models\FooterModel();
-
  ?>
-
- <pre>
-   <?php print_r($footer); ?>
- </pre>
 
   <footer>
     <div class="container">
