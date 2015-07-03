@@ -12,12 +12,9 @@ class EventModel extends PostModel {
 
   function __construct ($postID = false) {
     parent::__construct($postID);
-    $this->title = get_the_title($this->postID);
-    $this->description = get_the_content($this->postID);
     $this->location = get_field('location', $this->postID);
     $this->date = get_field('date', $this->postID);
     $this->time = get_field('time', $this->postID);
-    $this->permalink = get_permalink($this->postID);
   }
 
   function getDate() {
@@ -33,7 +30,7 @@ class EventModel extends PostModel {
   }
 
   function getLocationCopy() {
-    return $this->location->address;
+    return $this->location['address'];
   }
 
 }

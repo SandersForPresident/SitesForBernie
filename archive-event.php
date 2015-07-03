@@ -13,7 +13,7 @@
 
       <?php foreach ($EventsModel->events as $event) : ?>
         <article>
-          <h3><a href="<?php echo $event->permalink; ?>"><?php echo $event->title; ?></a></h3>
+          <h3><a href="<?php echo $event->permalink; ?>"><?php echo $event->getTitle(); ?></a></h3>
 
           <span class="date"><?php echo $event->getDate(); ?></span>
           <?php if ($event->hasTime()) : ?>
