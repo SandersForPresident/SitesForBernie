@@ -11,7 +11,7 @@
 
           <!-- Social Links -->
           <div class="column">
-            <h2><?php echo $footer->leftNavigation->title; ?></h2>
+            <h3><?php echo $footer->leftNavigation->title; ?></h3>
             <ul>
               <?php foreach ($footer->leftNavigation->items as $item) : ?>
                 <li>
@@ -24,7 +24,7 @@
 
           <!-- Presidential Campaign Links -->
           <div class="column">
-            <h2>Bernie</h2>
+            <h3>Bernie</h3>
             <ul>
               <li>Link</li>
             </ul>
@@ -33,7 +33,7 @@
 
           <!-- Organization Links -->
           <div class="column">
-            <h2><?php echo $footer->rightNavigation->title; ?></h2>
+            <h3><?php echo $footer->rightNavigation->title; ?></h3>
             <ul>
               <?php foreach ($footer->rightNavigation->items as $item) : ?>
                 <li>
