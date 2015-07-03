@@ -8,7 +8,9 @@ $sanders_includes = [
   'lib/assets.php',
   'lib/models/base.php',
   'lib/models/post.php',
-  'lib/models/footer.php'
+  'lib/models/footer.php',
+  'lib/models/event.php',
+  'lib/models/events.php'
 ];
 
 foreach ($sanders_includes as $file) {
