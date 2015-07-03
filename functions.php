@@ -10,6 +10,7 @@ $sanders_includes = [
   'lib/custom_posts/events/table.php',
   'lib/models/base.php',
   'lib/models/post.php',
+  'lib/models/header.php',
   'lib/models/footer.php',
   'lib/models/event.php',
   'lib/models/events.php',

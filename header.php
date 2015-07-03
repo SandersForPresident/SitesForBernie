@@ -1,3 +1,7 @@
+<?php
+  use SandersForPresident\Wordpress\Models\HeaderModel;
+  $header = new HeaderModel();
+?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
   <head>
@@ -11,9 +15,11 @@
 
     <header>
       <div class="container">
-        <a href="/" class="logo"><img src="http://placehold.it/200x100" /></a>
-        <nav>
-          <?php wp_nav_menu(array('menu' => 'header')); ?>
-        </nav>
+        <div class="border-wrap">
+          <a href="/" class="logo"><img src="<?php echo $header->getLogo(); ?>" /></a>
+          <nav>
+            <?php wp_nav_menu(array('menu' => 'header')); ?>
+          </nav>
+        </div>
       </div>
     </header>
