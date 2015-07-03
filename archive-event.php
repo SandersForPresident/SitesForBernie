@@ -1,17 +1,21 @@
 <?php
   /* Template Name: Events */
   use SandersForPresident\Wordpress\Models\EventsModel;
+  use SandersForPresident\Wordpress\Models\EventPageModel;
 
   get_header();
   $EventsModel = new EventsModel();
+  $EventPageModel = new EventPageModel();
   wp_reset_query();
 ?>
 
 <div class="container">
   <div class="page-container">
     <div class="page-title">
-      <h2>Mark your calendar</h2>
-      <h1>Events to attend around Wisconsin</h1>
+      <?php if ($EventPageModel->subtitle) : ?>
+        <h2><?php echo $EventPageModel->subtitle; ?></h2>
+      <?php endif; ?>
+      <h1><?php echo $EventPageModel->title; ?></h1>
 
       <?php foreach ($EventsModel->events as $event) : ?>
         <article>

@@ -12,7 +12,8 @@ $sanders_includes = [
   'lib/models/post.php',
   'lib/models/footer.php',
   'lib/models/event.php',
-  'lib/models/events.php'
+  'lib/models/events.php',
+  'lib/models/event_page.php'
 ];
 
 foreach ($sanders_includes as $file) {
