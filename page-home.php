@@ -5,10 +5,12 @@ get_header();
 
 <div class="container">
   <div class="page-container">
-    <h2><?php the_title(); ?></h2>
+    <div class="page-title">
+      <h2>Welcome To</h2>
+      <h1><?php the_title(); ?></h1>
+    </div>
 
-
-  </div>  
+  </div>
 </div>
 
 <?php get_footer(); ?>
