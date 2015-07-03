@@ -34,7 +34,7 @@ class EventModel extends PostModel {
   }
 
   public static function formatDate ($date) {
-    return date('l F n, Y', strtotime($date));
+    return date('l F j, Y', strtotime($date));
   }
 
 }

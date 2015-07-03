@@ -65,6 +65,34 @@ function location_column_content($postID) {
   }
 }
 
+/**
+ * Apply sortable rules
+ */
+function sortable_rules($vars) {
+  if (!isset($vars['post_type']) || $vars['post_type'] !== 'event') {
+    return $vars;
+  }
+
+  if (!isset($vars['orderby']) || $vars['orderby'] !== DATE_COLUMN) {
+    return $vars;
+  }
+  // request has been made, apply the sort rules
+
+  $vars = array_merge(
+    $vars,
+    array(
+      'meta_key' => 'date',
+      'orderby' => 'meta_value'
+    )
+  );
+
+  return $vars;
+}
+
+function column_admin_bootstrap_hook() {
+  add_filter('request', __NAMESPACE__ . '\\sortable_rules');
+}
+
 // custom column headings
 add_filter('manage_event_posts_columns', __NAMESPACE__ . '\\column_header', 10);
 
@@ -73,3 +101,5 @@ add_filter('manage_edit-event_sortable_columns', __NAMESPACE__ . '\\column_sorta
 
 // cusotm column content
 add_action('manage_event_posts_custom_column', __NAMESPACE__ . '\\column_content', 10, 2);
+
+add_action('load-edit.php', __NAMESPACE__ . '\\column_admin_bootstrap_hook');
