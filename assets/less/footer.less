@@ -1,0 +1,41 @@
+footer {
+  margin: 20px 0 0 0;
+  padding: 40px 0;
+  background-color: @lightGray;
+  .offset {
+    width: 80%;
+    margin: auto;
+  }
+
+  .links {
+    .make-row();
+
+    .column {
+      .make-sm-column(4);
+      text-align: center;
+
+      h3 {
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+      }
+
+      ul {
+        .clean-ul;
+        li {
+          padding: 3px 0;
+          a {
+            color: #818181;
+          }
+        }
+      }
+    }
+  }
+
+  .byline {
+
+    margin: 40px 0 0;
+    border: 1px solid @gray;
+    padding: 5px;
+    text-align: center;
+  }
+}

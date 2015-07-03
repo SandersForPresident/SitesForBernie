@@ -1,0 +1,28 @@
+header {
+  .clearfix();
+  margin: 0 0 20px 0;
+  padding: 40px 0 0 0;
+  text-transform: uppercase;
+  nav {
+    float: right;
+    margin-top: 20px;
+    ul {
+      padding: 0;
+      li {
+        display: inline-block;
+        padding: 5px 20px;
+
+        &.current-menu-item {
+          a {
+            color: @gray;
+          }
+        }
+      }
+    }
+  }
+
+  .border-wrap {
+    padding-bottom: 40px;
+    border-bottom: 2px solid @lightGray;
+  }
+}
