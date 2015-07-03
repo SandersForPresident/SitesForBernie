@@ -1,8 +1,19 @@
-<?php get_header(); ?>
+<?php
+  get_header();
+  the_post();
+?>
 
-<?php while (have_posts()) : the_post(); ?>
-  <h2><?php the_title(); ?></h2>
-  <?php the_content(); ?>
-<?php endwhile; ?>
+<article class="container">
+  <div class="page-container">
+    <div class="page-title">
+      <h2><?php the_title(); ?></h2>
+    </div>
+
+    <div class="rte">
+      <?php the_content(); ?>
+    </div>
+
+  </div>
+</article>
 
 <?php get_footer(); ?>

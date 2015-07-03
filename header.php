@@ -18,7 +18,7 @@
         <div class="border-wrap">
           <a href="/" class="logo"><img src="<?php echo $header->getLogo(); ?>" /></a>
           <nav>
-            <?php wp_nav_menu(array('menu' => 'header')); ?>
+            <?php wp_nav_menu(array('theme_location' => 'header')); ?>
           </nav>
         </div>
       </div>
