@@ -21,7 +21,7 @@ add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 /**
  * Registers custom post types
  */
-function register_custom_post_types () {
+function custom_post_types_init () {
   $postType = array(
     'labels' => array (
       'name' => 'Events',
@@ -41,4 +41,17 @@ function register_custom_post_types () {
   );
   register_post_type('event', $postType);
 }
-add_action('init', __NAMESPACE__ . '\\register_custom_post_types');
+add_action('init', __NAMESPACE__ . '\\custom_post_types_init');
+
+
+/**
+ * Registers nav menus
+ */
+function nav_menus_init () {
+  register_nav_menus(array (
+    'header' => 'Site Navigation',
+    'footer_social' => 'Social Links',
+    'footer_organize' => 'Organize Links'
+  ));
+}
+add_action('init', __NAMESPACE__ . '\\nav_menus_init');
