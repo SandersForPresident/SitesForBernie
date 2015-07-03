@@ -6,23 +6,36 @@ footer {
     width: 80%;
     margin: auto;
   }
-  .column {
-    .make-sm-column(4);
-    text-align: center;
 
-    h3 {
-      text-transform: uppercase;
-      margin: 0 0 10px 0;
-    }
+  .links {
+    .make-row();
 
-    ul {
-      .clean-ul;
-      li {
-        padding: 3px 0;
-        a {
-          color: #818181;
+    .column {
+      .make-sm-column(4);
+      text-align: center;
+
+      h3 {
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+      }
+
+      ul {
+        .clean-ul;
+        li {
+          padding: 3px 0;
+          a {
+            color: #818181;
+          }
         }
       }
     }
+  }
+
+  .byline {
+
+    margin: 40px 0 0;
+    border: 1px solid @gray;
+    padding: 5px;
+    text-align: center;
   }
 }
