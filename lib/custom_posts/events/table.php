@@ -69,37 +69,37 @@ function location_column_content($postID) {
  * Apply sortable rules
  */
 function sortable_rules($vars) {
-  if (!isset($vars['post_type']) || $vars['post_type'] !== 'event') {
+  if (!isset($vars['post_type']) || $vars['post_type'] !== 'event' || !isset($vars['orderby'])) {
     return $vars;
   }
 
-  if (!isset($vars['orderby']) || $vars['orderby'] !== DATE_COLUMN) {
-    return $vars;
+  if ($vars['orderby'] === DATE_COLUMN) {
+    // sort by the date meta field
+    $vars = array_merge(
+      $vars,
+      array(
+        'meta_key' => 'date',
+        'orderby' => 'meta_value'
+      )
+    );
   }
-  // request has been made, apply the sort rules
-
-  $vars = array_merge(
-    $vars,
-    array(
-      'meta_key' => 'date',
-      'orderby' => 'meta_value'
-    )
-  );
 
   return $vars;
 }
 
 function column_admin_bootstrap_hook() {
+  // custom column headings
+  add_filter('manage_event_posts_columns', __NAMESPACE__ . '\\column_header', 10);
+
+  // custom column sorting
+  add_filter('manage_edit-event_sortable_columns', __NAMESPACE__ . '\\column_sortable');
+
+  // custom column content
+  add_action('manage_event_posts_custom_column', __NAMESPACE__ . '\\column_content', 10, 2);
+
+  // custom table sorting rules
   add_filter('request', __NAMESPACE__ . '\\sortable_rules');
 }
 
-// custom column headings
-add_filter('manage_event_posts_columns', __NAMESPACE__ . '\\column_header', 10);
-
-// custom column sorting
-add_filter('manage_edit-event_sortable_columns', __NAMESPACE__ . '\\column_sortable');
-
-// cusotm column content
-add_action('manage_event_posts_custom_column', __NAMESPACE__ . '\\column_content', 10, 2);
-
+// only apply custom table rules on edit page
 add_action('load-edit.php', __NAMESPACE__ . '\\column_admin_bootstrap_hook');
