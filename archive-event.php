@@ -1,8 +1,10 @@
 <?php
+  /* Template Name: Events */
   use SandersForPresident\Wordpress\Models\EventsModel;
 
   get_header();
   $EventsModel = new EventsModel();
+  wp_reset_query();
 ?>
 
 <div class="container">
