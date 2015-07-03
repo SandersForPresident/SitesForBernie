@@ -15,7 +15,7 @@
             <ul>
               <?php foreach ($footer->leftNavigation->items as $item) : ?>
                 <li>
-                  <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
+                  <a href="<?php echo $item->url; ?>" title="<?php echo $item->title; ?>" target="_blank"><?php echo $item->title; ?></a>
                 </li>
               <?php endforeach; ?>
             </ul>
