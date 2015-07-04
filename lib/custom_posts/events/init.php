@@ -22,7 +22,7 @@ function setup() {
     'has_archive' => true,
     'hierarchical' => true,
     'show_in_nav_menus' => true,
-    'rewrite' => array('slug' => 'events'),
+    'rewrite' => array('slug' => 'events', 'with_front' => false),
     'supports' => array('title', 'editor', 'revisions', 'thumbnail')
   );
   register_post_type('event', $postType);
