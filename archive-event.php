@@ -4,20 +4,20 @@
   use SandersForPresident\Wordpress\Models\EventPageModel;
 
   get_header();
-  $EventsModel = new EventsModel();
-  $EventPageModel = new EventPageModel();
+  $events = new EventsModel();
+  $eventPage = new EventPageModel();
   wp_reset_query();
 ?>
 
 <div class="container">
   <div class="page-container">
     <div class="page-title">
-      <?php if ($EventPageModel->subtitle) : ?>
-        <h2><?php echo $EventPageModel->subtitle; ?></h2>
+      <?php if ($eventPage->subtitle) : ?>
+        <h2><?php echo $eventPage->subtitle; ?></h2>
       <?php endif; ?>
-      <h1><?php echo $EventPageModel->title; ?></h1>
+      <h1><?php echo $eventPage->title; ?></h1>
 
-      <?php foreach ($EventsModel->events as $event) : ?>
+      <?php foreach ($events->events as $event) : ?>
         <article>
           <h3><a href="<?php echo $event->permalink; ?>"><?php echo $event->getTitle(); ?></a></h3>
 
