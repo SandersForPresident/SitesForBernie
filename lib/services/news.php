@@ -9,26 +9,40 @@ class News {
 
   private $feed;
 
+  /**
+   * Loads the remote RSS feed
+   */
   private function loadFeed() {
     $this->feed = simplexml_load_file(FEED_ENDPOINT, 'SimpleXMLElement', LIBXML_NOWARNING);
   }
 
+  /**
+   * Parses the XML feed into JSON
+   */
   private function parseFeed($xml) {
-    // translate XML into JSON
     $json = json_encode($xml);
     $json = json_decode($json, true);
     $feed = $json['channel']['items'];
     return $feed;
   }
 
+  /**
+   * Load the cached feed
+   */
   private function loadCache() {
     return wp_cache_get(FEED_CACHE_KEY);
   }
 
+  /**
+   * Update the cache with the latest feed
+   */
   private function updateCache($feed) {
     return wp_cache_set(FEED_CACHE_KEY, $feed, null, FEED_CACHE_TTL);
   }
 
+  /**
+   * Get the news feed, cache lookup first
+   */
   public function getFeed() {
     if ($feed = $this->loadCache()) {
       return $feed;
@@ -44,11 +58,3 @@ class News {
     }
   }
 }
-
-
-<?php
-echo "<pre>";
-  $xml = simplexml_load_file('https://berniesanders.com/feed/');
-  echo $xml;
-  die();
-?>
