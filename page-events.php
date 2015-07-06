@@ -14,20 +14,13 @@
       <?php endif; ?>
       <h1><?php echo $EventPageModel->title; ?></h1>
 
-      <?php foreach ([] as $event) : ?>
-        <article>
-          <h3><a href="<?php echo $event->permalink; ?>"><?php echo $event->getTitle(); ?></a></h3>
 
-          <span class="date"><?php echo $event->getDate(); ?></span>
-          <?php if ($event->hasTime()) : ?>
-            <p class="time"><?php echo $event->time; ?></p>
-          <?php endif; ?>
-
-          <?php if ($event->hasLocation()) : ?>
-            <p class="location"><?php echo $event->getLocationCopy(); ?></p>
-          <?php endif; ?>
-        </article>
-      <?php endforeach; ?>
+      <article>
+        <h3>Looking for events in your area?</h3>
+        <p>
+          Head on over to the campaign's <a href="https://go.berniesanders.com/page/event/search_simple">Event Manager</a> to find an event near you!
+        </p>
+      </article>
 
     </div>
   </div>
