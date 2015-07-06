@@ -6,7 +6,7 @@
 $sanders_includes = [
   'lib/init.php',
   'lib/assets.php',
-  'lib/services/news.php',
+  'lib/services/remote_news_feed.php',
   'lib/models/base.php',
   'lib/models/post.php',
   'lib/models/header.php',

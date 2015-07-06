@@ -2,7 +2,7 @@
 namespace SandersForPresident\Wordpress\Services;
 use simplexml_load_file;
 
-class NewsFeedService {
+class RemoteNewsFeedService {
   const FEED_ENDPOINT = 'https://berniesanders.com/feed/';
   const FEED_CACHE_KEY = 'bernie_news_feed';
   const FEED_CACHE_TTL = 900; // 15 minute cache
