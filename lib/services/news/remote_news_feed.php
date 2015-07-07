@@ -44,14 +44,14 @@ class RemoteNewsFeedService {
    * Get the news feed, cache lookup first
    */
   public function getFeed() {
-    $feed = [];
+    $feed = array();
     if ($json = $this->loadCache()) {
       $feed = $json;
     } else {
       $xml = $this->loadFeed();
       if (!$xml) {
         // likely a problem fetching content
-        return [];
+        return array();
       }
       $feed = $this->parseFeed($xml);
       $this->updateCache($feed);
