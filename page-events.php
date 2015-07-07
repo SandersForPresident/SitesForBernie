@@ -1,9 +1,11 @@
 <?php
   /* Template Name: Events */
   use SandersForPresident\Wordpress\Models\EventPageModel;
+  use SandersForPresident\Wordpress\Services\Events\RemoteEventService;
 
   get_header();
   $EventPageModel = new EventPageModel();
+  $eventService = new RemoteEventService();
 ?>
 
 <div class="container">

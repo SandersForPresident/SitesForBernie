@@ -8,6 +8,7 @@ $sanders_includes = [
   'lib/assets.php',
   'lib/services/news/remote_news_feed.php',
   'lib/services/news/news_feed.php',
+  'lib/services/events/remote_events.php',
   'lib/models/base.php',
   'lib/models/post.php',
   'lib/models/header.php',
