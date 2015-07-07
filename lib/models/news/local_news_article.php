@@ -11,11 +11,11 @@ class LocalNewsArticle extends NewsArticle {
   }
 
   public function getTitle() {
-    return apply_filter('the_title', $this->post->title);
+    return apply_filters('the_title', $this->post->post_title);
   }
 
   public function getContent() {
-    return apply_filter('the_content', $this->post->content);
+    return apply_filters('the_content', $this->post->post_content);
   }
 
   public function getDate() {
