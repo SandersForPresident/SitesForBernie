@@ -3,6 +3,7 @@
 namespace SandersForPresident\Wordpress\Models;
 
 class HeaderModel extends BaseModel {
+  const DEFAULT_LOGO = '/assets/images/logo.png';
   public $logo;
   public $notification;
 
@@ -13,7 +14,11 @@ class HeaderModel extends BaseModel {
   }
 
   public function getLogo() {
-    return $this->logo['sizes']['thumbnail'];
+    if ($this->logo) {
+      return $this->logo['sizes']['thumbnail'];
+    } else {
+      return get_template_directory_uri() . self::DEFAULT_LOGO;
+    }
   }
 
   public function hasNotification() {
