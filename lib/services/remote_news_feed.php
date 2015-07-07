@@ -46,7 +46,6 @@ class RemoteNewsFeedService {
   public function getFeed() {
     $feed = [];
     if ($json = $this->loadCache()) {
-      echo 'YUP';
       $feed = $json;
     } else {
       $xml = $this->loadFeed();
