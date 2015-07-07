@@ -10,7 +10,12 @@ $news = $newsFeedService->getNewsFeed();
   <div class="page-container">
     <?php foreach ($news as $item) : ?>
       <article>
-        <h2><a href="<?php echo $item->getLink(); ?>"><?php echo $item->getTitle(); ?></a></h2>
+        <h2>
+          <a href="<?php echo $item->getLink(); ?>">
+            <?php if ($item->isRemote()): ?><span style="color: #277cc0;">BERNIE POST:</span><?php endif; ?>
+            <?php echo $item->getTitle(); ?>
+          </a>
+        </h2>
         <h4><?php echo $item->getFormattedDate(); ?></h4>
         <div class="rte">
           <?php echo $item->getContent(); ?>

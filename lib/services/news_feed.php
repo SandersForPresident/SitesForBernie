@@ -5,18 +5,15 @@ use SandersForPresident\Wordpress\Models\News\LocalNewsArticle;
 
 class NewsFeedService {
   private $remoteNewsFeedService;
-  private $remoteNewsFeed = [];
-  private $localNewsFeed = [];
 
   public function __construct() {
-    $this->remoteNewsFeedService = new remoteNewsFeedService();
+    $this->remoteNewsFeedService = new RemoteNewsFeedService();
   }
 
-  public function loadNewsFeed() {
-    $this->remoteNewsFeed = $this->remoteNewsFeedService->getFeed();
-    $this->localNewsFeed = $this->getLocalNewsFeed();
-  }
-
+  /**
+   * Fetches the local news feed.
+   * Note: currently MUST utilize The Loop
+   */
   private function getLocalNewsFeed() {
     global $post;
     $articles = [];
@@ -27,10 +24,21 @@ class NewsFeedService {
     return $articles;
   }
 
+  /**
+   * Merges the remote and local news feed articles into a chronological series
+   */
   public function getNewsFeed() {
-    $this->loadNewsFeed();
-    $aggregatedNews = array_merge($this->remoteNewsFeed, $this->localNewsFeed);
-
+    $remoteNewsFeed = $this->remoteNewsFeedService->getFeed();
+    $localNewsFeed = $this->getLocalNewsFeed();
+    $aggregatedNews = array_merge($remoteNewsFeed, $localNewsFeed);
+    usort($aggregatedNews, array(self, 'aggregateNewsSort'));
     return $aggregatedNews;
+  }
+
+  /**
+   * Date comparison for a descending feed
+   */
+  private function aggregateNewsSort($a, $b) {
+    return strtotime($a->getDate()) < strtotime($b->getDate());
   }
 }

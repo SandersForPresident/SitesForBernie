@@ -2,14 +2,14 @@
 
 namespace SandersForPresident\Wordpress\Models\News;
 
-abstract class NewsArticle {
+abstract class AbstractNewsArticle {
   const LOCAL_TYPE = 0;
   const REMOTE_TYPE = 1;
 
   private $type;
 
   public function __construct($type) {
-    $this->type = type;
+    $this->type = $type;
   }
 
   abstract public function getTitle();

@@ -13,7 +13,7 @@ $sanders_includes = [
   'lib/models/header.php',
   'lib/models/footer.php',
   'lib/models/event_page.php',
-  'lib/models/news/news_article.php',
+  'lib/models/news/abstract_news_article.php',
   'lib/models/news/remote_news_article.php',
   'lib/models/news/local_news_article.php'
 ];

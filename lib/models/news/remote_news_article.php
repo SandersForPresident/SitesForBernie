@@ -2,11 +2,11 @@
 
 namespace SandersForPresident\Wordpress\Models\News;
 
-class RemoteNewsArticle extends NewsArticle {
+class RemoteNewsArticle extends AbstractNewsArticle {
   public $post;
 
   public function __construct($data) {
-    parent::__construct(NewsArticle::REMOTE_TYPE);
+    parent::__construct(AbstractNewsArticle::REMOTE_TYPE);
     $this->post = $data;
   }
 
