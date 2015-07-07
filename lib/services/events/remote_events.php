@@ -15,7 +15,7 @@ class RemoteEventService {
       return $events;
     } else {
       $params = $this->constructListParams();
-      $events = $this->makeRequest();
+      $events = $this->makeRequest($params);
       $this->updateCache($events);
       return $events;
     }
@@ -36,12 +36,17 @@ class RemoteEventService {
     }
   }
 
+  public function getLocalEvents() {
+    $zip = 20003; //get_field('site_zip', 'option');
+    return $this->searchEvents($zip);
+  }
+
   /**
    * Performs the request for the events
    */
   private function makeRequest($params = array()) {
-    $requestUri = FEED_ENDPOINT;
-    $requestUri .= http_build_query($params);
+    $requestUri = self::FEED_ENDPOINT;
+    $requestUri .= '?' . http_build_query($params);
     $response = file_get_contents($requestUri);
     return json_decode($response);
   }
