@@ -1,13 +1,18 @@
-<?php get_header(); ?>
-
 <?php
-use SandersForPresident\Wordpress\Services\News\NewsFeedService;
+  get_header();
 
-$newsFeedService = new NewsFeedService();
-$news = $newsFeedService->getNewsFeed();
+  use SandersForPresident\Wordpress\Services\News\NewsFeedService;
+
+  $newsFeedService = new NewsFeedService();
+  $news = $newsFeedService->getNewsFeed();
 ?>
-<div class="container blog">
+<div class="container blog list">
   <div class="page-container">
+    <div class="page-title">
+      <h2>Find out what's going on near you</h2>
+      <h1>News</h1>
+    </div>
+
     <?php foreach ($news as $item) : ?>
       <article>
         <h2>
