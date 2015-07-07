@@ -7,7 +7,7 @@ class RemoteNewsArticle extends NewsArticle {
 
   public function __construct($data) {
     parent::__construct(NewsArticle::REMOTE_TYPE);
-    $this->post = data;
+    $this->post = $data;
   }
 
   public function getTitle() {

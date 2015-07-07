@@ -1,5 +1,13 @@
 <?php get_header(); ?>
+<?php
+use SandersForPresident\Wordpress\Services\News;
 
+$newsFeedService = new NewsFeedService();
+$news = $newsFeedService->getFeed();
+echo "<pre>WTF";
+  print_r($news);
+  die();
+?>
 <div class="container blog">
   <div class="page-container">
     <?php while (have_posts()) : the_post(); ?>

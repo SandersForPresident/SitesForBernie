@@ -16,6 +16,8 @@ class NewsFeedService {
   }
 
   public function getNewsFeed() {
+    $this->loadNewsFeed();
+    return $this->remoteNewsFeed;
     $aggregatedNews = array_merge($this->remoteNewsFeed, $this->localNewsFeed);
 
     return $aggregatedNews;
