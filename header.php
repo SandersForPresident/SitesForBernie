@@ -14,12 +14,21 @@
   </head>
   <body <?php body_class(); ?>>
 
+    <?php if ($header->hasNotification()) : ?>
+      <section class="notification">
+        <?php if ($header->hasNotificationTitle()) : ?>
+          <span><?php echo $header->getNotificationTitle(); ?> - </span>
+        <?php endif; ?>
+        <p><?php echo $header->getNotificationHeadline(); ?></p>
+        <a href="<?php echo $header->getNotificationLink(); ?>" class="button blue">Read More</a>
+      </section>
+    <?php endif; ?>
     <header>
       <div class="container">
         <div class="border-wrap">
           <a href="/" class="logo"><img src="<?php echo $header->getLogo(); ?>" /></a>
           <nav>
-            <?php wp_nav_menu(array('theme_location' => 'header')); ?>
+            <?php wp_nav_menu(array('theme_location' => 'header', 'container_class' => 'navigation')); ?>
             <a href="https://secure.actblue.com/contribute/page/lets-go-bernie" class="button">Contribute</a>
           </nav>
         </div>
