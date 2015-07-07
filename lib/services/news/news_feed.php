@@ -16,7 +16,7 @@ class NewsFeedService {
    */
   private function getLocalNewsFeed() {
     global $post;
-    $articles = [];
+    $articles = array();
     while (have_posts()) {
       the_post();
       $articles[] = new LocalNewsArticle($post);

@@ -52,9 +52,13 @@
 
         </div>
 
+        <div class="endorsement">
+          <div>
+            Donated by <a href="https://www.reddit.com/r/CodersForSanders" target="_blank">Friends of Bernie</a>
+          </div>
+        </div>
         <div class="byline">
-          Donated by <a href="https://www.reddit.com/r/CodersForSanders" target="_blank">/r/CodersForSanders</a>.
-          Not authorized by any candidate or committee
+          This site is supported by volunteers and not endorsed or affiliated with the official Bernie Sanders campaign.
         </div>
       </div>
     </div>

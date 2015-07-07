@@ -1,9 +1,9 @@
 footer {
   margin: 20px 0 0 0;
-  padding: 40px 0;
+  padding: 40px 0 20px 0;
   background-color: @lightGray;
   .offset {
-    width: 80%;
+    width: 70%;
     margin: auto;
   }
 
@@ -31,11 +31,26 @@ footer {
     }
   }
 
-  .byline {
-
-    margin: 40px 0 0;
-    border: 1px solid @gray;
-    padding: 5px;
+  .endorsement {
     text-align: center;
+    div {
+      display: inline-block;
+      margin: 40px auto 20px auto;
+      padding: 10px 16px;
+      width: auto;
+      border: 1px solid @gray;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 2px;
+
+      a {
+        color: @darkBlue;
+      }
+    }
+  }
+
+  .byline {
+    text-align: center;
+    font-style: italic;
   }
 }

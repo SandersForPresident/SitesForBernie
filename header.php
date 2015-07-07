@@ -20,6 +20,7 @@
           <a href="/" class="logo"><img src="<?php echo $header->getLogo(); ?>" /></a>
           <nav>
             <?php wp_nav_menu(array('theme_location' => 'header')); ?>
+            <a href="https://secure.actblue.com/contribute/page/lets-go-bernie" class="button">Contribute</a>
           </nav>
         </div>
       </div>
