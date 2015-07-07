@@ -1,5 +1,5 @@
 <?php
-namespace SandersForPresident\Wordpress\Services;
+namespace SandersForPresident\Wordpress\Services\News;
 
 use simplexml_load_file;
 use SandersForPresident\Wordpress\Models\News\RemoteNewsArticle;
