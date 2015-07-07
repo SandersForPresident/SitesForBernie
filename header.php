@@ -28,7 +28,7 @@
         <div class="border-wrap">
           <a href="/" class="logo"><img src="<?php echo $header->getLogo(); ?>" /></a>
           <nav>
-            <?php wp_nav_menu(array('theme_location' => 'header')); ?>
+            <?php wp_nav_menu(array('theme_location' => 'header', 'container_class' => 'navigation')); ?>
             <a href="https://secure.actblue.com/contribute/page/lets-go-bernie" class="button">Contribute</a>
           </nav>
         </div>
