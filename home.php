@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php
-use SandersForPresident\Wordpress\Services\NewsFeedService;
+use SandersForPresident\Wordpress\Services\News\NewsFeedService;
 
 $newsFeedService = new NewsFeedService();
 $news = $newsFeedService->getNewsFeed();
