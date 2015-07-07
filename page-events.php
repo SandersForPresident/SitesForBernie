@@ -20,13 +20,13 @@
     </div>
 
     <article>
-      <h3>Looking for events in your area?</h3>
-      <h4>There are <?php echo intval($localEvents->settings->count); ?> local events out of <?php echo intval($events->settings->count); ?> total events.</h4>
+      <h3>Looking for events in your area? <strong>There are <?php echo intval($localEvents->settings->count); ?> local events out of <?php echo intval($events->settings->count); ?> total events.</strong></h3>
+      
 
       <?php foreach ($localEvents->results as $event) : ?>
         <article>
-          <h2><?php echo $event->name; ?></h2>
-          <h4><a href="<?php echo $event->url; ?>"><?php echo $event->start_dt; ?></a></h4>
+          <h2><a href="<?php echo $event->url; ?>"><?php echo $event->name; ?></a></h2>
+          <h4><?php echo date('l F j, Y', strtotime($event->start_dt)); ?></h4>
           <div class="rte">
             <p>
               <?php echo $event->description; ?>
