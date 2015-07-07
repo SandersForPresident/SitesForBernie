@@ -1,11 +1,5 @@
 <?php get_header(); ?>
 
-<?php
-use SandersForPresident\Wordpress\Services\NewsFeedService;
-
-$newsFeedService = new NewsFeedService();
-$news = $newsFeedService->getNewsFeed();
-?>
 <div class="container blog">
   <div class="page-container">
 
@@ -13,14 +7,14 @@ $news = $newsFeedService->getNewsFeed();
       Sorry, no results were found.
     <?php endif; ?>
 
-    <?php foreach ($news as $item) : ?>
+    <?php while (has_posts()) : the_post(); ?>
       <article>
-        <h2><a href="<?php echo $item->getLink(); ?>"><?php echo $item->getTitle(); ?></a></h2>
+        <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
         <div class="rte">
-          <?php echo $item->getContent(); ?>
+          <?php the_content(); ?>
         </div>
       </article>
-    <?php endforeach; ?>
+    <?php endwhile; ?>
   </div>
 </div>
 <?php get_footer(); ?>
