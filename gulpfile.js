@@ -1,8 +1,11 @@
-var gulp = require('gulp'),
+var argv = require('minimist')(process.argv.slice(2)),
+    gulp = require('gulp'),
     less = require('gulp-less'),
     jscs = require('gulp-jscs'),
     jshint = require('gulp-jshint'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    gulpif = require('gulp-if');
 
 gulp.task('styles', function () {
   return gulp.src('assets/less/main.less')
@@ -13,13 +16,15 @@ gulp.task('styles', function () {
 gulp.task('js:client', function () {
   gulp.src('assets/js/**/*.js')
   .pipe(concat('main.js'))
+  .pipe(gulpif(argv.production, uglify()))
   .pipe(gulp.dest('assets/dist'));
 })
 
 gulp.task('js:vendor', function () {
   gulp.src([])
   .pipe(concat('vendor.js'))
-  .pipe(gulp.dest('assets/dist'))
+  .pipe(gulpif(argv.production, uglify()))
+  .pipe(gulp.dest('assets/dist'));
 });
 
 gulp.task('lint', function () {
