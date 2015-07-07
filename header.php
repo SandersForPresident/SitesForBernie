@@ -14,6 +14,15 @@
   </head>
   <body <?php body_class(); ?>>
 
+    <?php if ($header->hasNotification()) : ?>
+      <section class="notification">
+        <?php if ($header->hasNotificationTitle()) : ?>
+          <span><?php echo $header->getNotificationTitle(); ?> - </span>
+        <?php endif; ?>
+        <p><?php echo $header->getNotificationHeadline(); ?></p>
+        <a href="<?php echo $header->getNotificationLink(); ?>" class="button blue">Read More</a>
+      </section>
+    <?php endif; ?>
     <header>
       <div class="container">
         <div class="border-wrap">
