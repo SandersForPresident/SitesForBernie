@@ -19,7 +19,7 @@ class LocalNewsArticle extends NewsArticle {
   }
 
   public function getDate() {
-    return null;
+    return $this->post->post_modified;
   }
 
   public function getLink() {
