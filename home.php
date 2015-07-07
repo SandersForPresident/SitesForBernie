@@ -17,7 +17,7 @@
       <article>
         <h2>
           <a href="<?php echo $item->getLink(); ?>">
-            <?php if ($item->isRemote()): ?><span style="color: #277cc0;">BERNIE POST:</span><?php endif; ?>
+            <?php if ($item->isRemote()) : ?><span style="color: #277cc0;">BERNIE POST:</span><?php endif; ?>
             <?php echo $item->getTitle(); ?>
           </a>
         </h2>

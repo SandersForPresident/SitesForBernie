@@ -5,7 +5,7 @@ namespace SandersForPresident\Wordpress\Models\News;
 class LocalNewsArticle extends AbstractNewsArticle {
   public $post;
 
-  public function __construct ($data) {
+  public function __construct($data) {
     parent::__construct(AbstractNewsArticle::LOCAL_TYPE);
     $this->post = $data;
   }

@@ -32,5 +32,4 @@ abstract class AbstractNewsArticle {
   public function isRemote() {
     return self::REMOTE_TYPE === $this->type;
   }
-
 }
