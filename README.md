@@ -1,8 +1,8 @@
 # SandersForPresident WordPress Theme
 
-![build status](https://api.travis-ci.org/SandersForPresident/Wordpress.svg)
+![build status](https://api.travis-ci.org/SandersForPresident/WordPress.svg)
 
-This is a reusable theme for Bernie Sanders state microsites.
+This is a reusable theme for Bernie Sanders campaign microsites.
 
 ## Installing
 

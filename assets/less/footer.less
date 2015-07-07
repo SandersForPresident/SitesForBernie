@@ -1,0 +1,56 @@
+footer {
+  margin: 20px 0 0 0;
+  padding: 40px 0 20px 0;
+  background-color: @lightGray;
+  .offset {
+    width: 70%;
+    margin: auto;
+  }
+
+  .links {
+    .make-row();
+
+    .column {
+      .make-sm-column(4);
+      text-align: center;
+
+      h3 {
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+      }
+
+      ul {
+        .clean-ul;
+        li {
+          padding: 3px 0;
+          a {
+            color: #818181;
+          }
+        }
+      }
+    }
+  }
+
+  .endorsement {
+    text-align: center;
+    div {
+      display: inline-block;
+      margin: 40px auto 20px auto;
+      padding: 10px 16px;
+      width: auto;
+      border: 1px solid @gray;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 2px;
+
+      a {
+        color: @darkBlue;
+      }
+    }
+  }
+
+  .byline {
+    text-align: center;
+    font-style: italic;
+  }
+}

@@ -1,12 +1,13 @@
 <?php
-  get_header();
-  the_post();
+/* Template Name: About */
+get_header();
+the_post();
 ?>
 
 <article class="container">
   <div class="page-container">
     <div class="page-title">
-      <h2><?php the_title(); ?></h2>
+      <h1><?php the_title(); ?></h1>
     </div>
 
     <div class="rte">

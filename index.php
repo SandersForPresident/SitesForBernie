@@ -1,12 +1,20 @@
 <?php get_header(); ?>
 
-<?php if (!have_posts()) : ?>
-  Sorry, no results were found.
-<?php endif; ?>
+<div class="container blog">
+  <div class="page-container">
 
-<?php while (have_posts()) : the_post(); ?>
-  <h2><?php the_title(); ?></h2>
-  <?php the_content(); ?>
-<?php endwhile; ?>
+    <?php if (!have_posts()) : ?>
+      Sorry, no results were found.
+    <?php endif; ?>
 
+    <?php while (has_posts()) : the_post(); ?>
+      <article>
+        <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <div class="rte">
+          <?php the_content(); ?>
+        </div>
+      </article>
+    <?php endwhile; ?>
+  </div>
+</div>
 <?php get_footer(); ?>
