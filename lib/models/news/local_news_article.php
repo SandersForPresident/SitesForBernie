@@ -2,8 +2,6 @@
 
 namespace SandersForPresident\Wordpress\Models\News;
 
-use NewsArticle;
-
 class LocalNewsArticle extends NewsArticle {
   public $post;
 
@@ -27,6 +25,4 @@ class LocalNewsArticle extends NewsArticle {
   public function getLink() {
     return get_permalink($this->post->ID);
   }
-
-  public function
 }

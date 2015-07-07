@@ -1,6 +1,8 @@
 <?php
 namespace SandersForPresident\Wordpress\Services;
+
 use simplexml_load_file;
+use SandersForPresident\Wordpress\Models\News\RemoteNewsArticle;
 
 class RemoteNewsFeedService {
   const FEED_ENDPOINT = 'https://berniesanders.com/feed/';
@@ -11,7 +13,7 @@ class RemoteNewsFeedService {
    * Loads the remote RSS feed
    */
   private function loadFeed() {
-    return simplexml_load_file(self::FEED_ENDPOINT, 'SimpleXMLElement', LIBXML_NOWARNING);
+    return simplexml_load_file(self::FEED_ENDPOINT, 'SimpleXMLElement', LIBXML_NOCDATA);
   }
 
   /**
@@ -19,8 +21,8 @@ class RemoteNewsFeedService {
    */
   private function parseFeed($xml) {
     $json = json_encode($xml);
-    $json = json_decode($json, true);
-    $feed = $json['channel']['item'];
+    $json = json_decode($json);
+    $feed = $json->channel->item;
     return $feed;
   }
 
@@ -42,9 +44,10 @@ class RemoteNewsFeedService {
    * Get the news feed, cache lookup first
    */
   public function getFeed() {
-    if ($feed = $this->loadCache()) {
+    $feed = [];
+    if ($json = $this->loadCache()) {
       echo 'YUP';
-      return $feed;
+      $feed = $json;
     } else {
       $xml = $this->loadFeed();
       if (!$xml) {
@@ -53,7 +56,11 @@ class RemoteNewsFeedService {
       }
       $feed = $this->parseFeed($xml);
       $this->updateCache($feed);
-      return $feed;
     }
+    return array_map(array($this, 'mapFeedModels'), $feed);
+  }
+
+  private function mapFeedModels($item) {
+    return new RemoteNewsArticle($item);
   }
 }

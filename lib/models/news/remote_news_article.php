@@ -2,8 +2,6 @@
 
 namespace SandersForPresident\Wordpress\Models\News;
 
-use NewsArticle;
-
 class RemoteNewsArticle extends NewsArticle {
   public $post;
 

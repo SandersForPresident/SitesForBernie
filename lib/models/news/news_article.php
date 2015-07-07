@@ -2,7 +2,7 @@
 
 namespace SandersForPresident\Wordpress\Models\News;
 
-class NewsArticle {
+abstract class NewsArticle {
   const LOCAL_TYPE = 0;
   const REMOTE_TYPE = 1;
 
