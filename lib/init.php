@@ -31,7 +31,7 @@ function nav_menus_init() {
 add_action('init', __NAMESPACE__ . '\\nav_menus_init');
 
 function admin_menu_overrides() {
-  if(function_exists('acf_set_options_page_menu')) {
+  if (function_exists('acf_set_options_page_menu')) {
     acf_set_options_page_menu('Theme Options');
   }
 }
