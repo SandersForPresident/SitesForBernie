@@ -26,12 +26,14 @@ function nav_menus_init() {
     'header' => 'Site Navigation',
     'footer_social' => 'Social Links',
     'footer_organize' => 'Organize Links'
-  ));
+    ));
 }
 add_action('init', __NAMESPACE__ . '\\nav_menus_init');
 
 function admin_menu_overrides() {
-  acf_set_options_page_menu('Theme Options');
+  if(function_exists('acf_set_options_page_menu')) {
+    acf_set_options_page_menu('Theme Options');
+  }
 }
 add_action('admin_menu', __NAMESPACE__ . '\\admin_menu_overrides');
 
@@ -40,10 +42,10 @@ if (function_exists('acf_add_options_sub_page')) {
   acf_add_options_sub_page(array(
     'title' => 'Event Page Options',
     'parent' => 'edit.php?post_type=event'
-  ));
+    ));
 
   acf_add_options_sub_page(array(
     'title' => 'Theme Options',
     'menu' => 'Theme Options'
-  ));
+    ));
 }
