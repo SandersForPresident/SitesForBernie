@@ -12,6 +12,7 @@
 
           <!-- Social Links -->
           <div class="column">
+            <?php if ($footer->hasLeftNavigation()) : ?>
             <h3><?php echo $footer->leftNavigation->title; ?></h3>
             <ul>
               <?php foreach ($footer->leftNavigation->items as $item) : ?>
@@ -20,6 +21,7 @@
                 </li>
               <?php endforeach; ?>
             </ul>
+            <?php endif; ?>
           </div>
           <!-- end: Social Links -->
 
@@ -39,6 +41,7 @@
 
           <!-- Organization Links -->
           <div class="column">
+            <?php if ($footer->hasRightNavigation()) : ?>
             <h3><?php echo $footer->rightNavigation->title; ?></h3>
             <ul>
               <?php foreach ($footer->rightNavigation->items as $item) : ?>
@@ -47,6 +50,7 @@
                 </li>
               <?php endforeach; ?>
             </ul>
+            <?php endif; ?>
           </div>
           <!-- end: Oragnization Links -->
 
