@@ -27,5 +27,8 @@ foreach ($sanders_includes as $file) {
   require_once($filepath);
 }
 
+// Custom image size for header logo
+add_image_size( 'logo', 194, 88 );
+
 // cleanup global vars
 unset($file, $filepath);
