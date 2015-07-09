@@ -15,8 +15,19 @@ class FooterModel extends BaseModel {
     $this->prepareRightNavigation();
   }
 
+  public function hasLeftNavigation() {
+    return !empty($this->leftNavigation);
+  }
+
+  public function hasRightNavigation() {
+    return !empty($this->rightNavigation);
+  }
+
   public function prepareLeftNavigation() {
-    $menu = wp_get_nav_menu_object($this->navLocations['footer_social']);
+    if (!array_key_exists(self::LEFT_NAVIGATION_SLUG, $this->navLocations)) {
+      return;
+    }
+    $menu = wp_get_nav_menu_object($this->navLocations[self::LEFT_NAVIGATION_SLUG]);
     $menuItems = wp_get_nav_menu_items($menu->term_id);
     $this->fillModelAttributes($this->leftNavigation, array(
       'title' => $menu->name,
@@ -25,7 +36,10 @@ class FooterModel extends BaseModel {
   }
 
   public function prepareRightNavigation() {
-    $menu = wp_get_nav_menu_object($this->navLocations['footer_organize']);
+    if (!array_key_exists(self::RIGHT_NAVIGATION_SLUG, $this->navLocations)) {
+      return;
+    }
+    $menu = wp_get_nav_menu_object($this->navLocations[self::RIGHT_NAVIGATION_SLUG]);
     $menuItems = wp_get_nav_menu_items($menu->term_id);
     $this->fillModelAttributes($this->rightNavigation, array(
       'title' => $menu->name,
