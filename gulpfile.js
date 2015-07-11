@@ -1,15 +1,19 @@
-var argv = require('minimist')(process.argv.slice(2)),
-    gulp = require('gulp'),
-    less = require('gulp-less'),
-    jscs = require('gulp-jscs'),
-    jshint = require('gulp-jshint'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    gulpif = require('gulp-if');
+var argv         = require('minimist')(process.argv.slice(2)),
+    gulp         = require('gulp'),
+    less         = require('gulp-less'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifyCss    = require('gulp-minify-css'),
+    jscs         = require('gulp-jscs'),
+    jshint       = require('gulp-jshint'),
+    concat       = require('gulp-concat'),
+    uglify       = require('gulp-uglify'),
+    gulpif       = require('gulp-if');
 
 gulp.task('styles', function () {
   return gulp.src('assets/less/main.less')
   .pipe(less())
+  .pipe(autoprefixer({browsers: ['last 2 versions']}))
+  .pipe(gulpif(argv.production, minifyCss()))
   .pipe(gulp.dest('assets/dist'));
 });
 
