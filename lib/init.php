@@ -26,7 +26,7 @@ function nav_menus_init() {
     'header' => 'Site Navigation',
     'footer_social' => 'Social Links',
     'footer_organize' => 'Organize Links'
-    ));
+  ));
 }
 add_action('init', __NAMESPACE__ . '\\nav_menus_init');
 
