@@ -47,3 +47,22 @@ if (function_exists('acf_add_options_sub_page')) {
     'menu' => 'Theme Options'
   ));
 }
+
+/**
+ * ACF Local JSON
+ */
+
+// save custom fields
+function acf_json_save( $path ) {
+  $path = get_stylesheet_directory() . '/assets/acf_local_json';
+  return $path;    
+}
+add_filter('acf/settings/save_json', __NAMESPACE__ . '\\acf_json_save');
+
+// load custom fields
+function acf_json_load( $paths ) {
+  unset($paths[0]);
+  $paths[] = get_stylesheet_directory() . '/assets/acf_local_json';
+  return $paths;    
+}
+add_filter('acf/settings/load_json', __NAMESPACE__ . '\\acf_json_load');
