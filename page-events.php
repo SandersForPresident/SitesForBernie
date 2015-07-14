@@ -14,9 +14,9 @@
   <div class="page-container">
     <div class="page-title">
       <?php if ($EventPageModel->subtitle) : ?>
-        <h2><?php echo $EventPageModel->subtitle; ?></h2>
+        <h3><?php echo $EventPageModel->subtitle; ?></h3>
       <?php endif; ?>
-      <h1><?php echo $EventPageModel->title; ?></h1>
+      <h2><?php echo $EventPageModel->title; ?></h2>
     </div>
 
     <article>
@@ -25,7 +25,7 @@
 
       <?php foreach ($localEvents->results as $event) : ?>
         <article>
-          <h2><a href="<?php echo $event->url; ?>"><?php echo $event->name; ?></a></h2>
+          <h3><a href="<?php echo $event->url; ?>"><?php echo $event->name; ?></a></h3>
           <h4><?php echo date('l F j, Y', strtotime($event->start_dt)); ?></h4>
           <div class="rte">
             <p>

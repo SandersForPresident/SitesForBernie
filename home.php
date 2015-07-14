@@ -9,8 +9,7 @@
 <div class="container blog list">
   <div class="page-container">
     <div class="page-title">
-      <h2>Find out what's going on near you</h2>
-      <h1>News</h1>
+      <h2>News</h2>
     </div>
 
     <?php foreach ($news as $item) : ?>
