@@ -14,10 +14,9 @@
     </div>
 
     <?php foreach ($news as $item) : ?>
-      <article>
+      <article<?php if ($item->isRemote()) : ?> class="official"<?php endif; ?>>
         <h2>
           <a href="<?php echo $item->getLink(); ?>">
-            <?php if ($item->isRemote()) : ?><span style="color: #277cc0;">BERNIE POST:</span><?php endif; ?>
             <?php echo $item->getTitle(); ?>
           </a>
         </h2>
