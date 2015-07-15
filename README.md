@@ -8,6 +8,11 @@ This is a reusable theme for Bernie Sanders campaign microsites.
 
 Clone the git repo `git@github.com:SandersForPresident/Wordpress.git` and then rename the directory to the name of your theme or website.
 
+* Install and Activate https://wordpress.org/plugins/advanced-custom-fields/
+
+## Using Vagrant for local development
+You can use [vagrant](https://www.vagrantup.com/) to install a local VM with WordPress, nginx, php-fpm, etc.  Install vagrant and `vagrant up` should give you a host at http://192.168.33.10/ to visit and complete the WordPress installation.
+
 ## Theme Development
 
 SandersForPresident uses [gulp](gulp) as a build system and [bower](bower) as a front end package manager.
