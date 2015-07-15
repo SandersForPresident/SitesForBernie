@@ -5,3 +5,6 @@
 - name: Copy nginx configuration for wordpress
   template: src=default.conf dest=/etc/nginx/conf.d/default.conf
   notify: restart nginx
+
+- name: Start nginx
+  service: name=nginx state=started enabled=true
