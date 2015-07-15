@@ -13,6 +13,8 @@ Clone the git repo `git@github.com:SandersForPresident/Wordpress.git` and then r
 ## Using Vagrant for local development
 You can use [vagrant](https://www.vagrantup.com/) to install a local VM with WordPress, nginx, php-fpm, etc.  Install vagrant and `vagrant up` should give you a host at http://192.168.33.10/ to visit and complete the WordPress installation.
 
+Our vagrant setup uses [ansible](http://docs.ansible.com/intro_installation.html) so be sure to install that as well.
+
 ## Theme Development
 
 SandersForPresident uses [gulp](gulp) as a build system and [bower](bower) as a front end package manager.
