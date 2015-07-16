@@ -24,16 +24,15 @@ article {
 
 // For styling blog posts coming from BernieSanders.com official campaign
 .official {
+  h5 {
+    font-family: 'Muli', sans-serif;
+    font-size: 14px;
+    color: @red;
+    text-transform: uppercase;
+    margin: 30px 0 0;
+  }
   h2 {
-    // Add text to denote official source
-    &:before {
-      content: 'Official News';
-      display: block;
-      font-family: 'Muli', sans-serif;
-      font-size: 14px;
-      color: @red;
-      text-transform: uppercase;
-    }
+    margin-top: 0;
   }
   // Add .com to "Bernie Sanders" link for more clarity
   p:last-child {
