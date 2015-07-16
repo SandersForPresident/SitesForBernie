@@ -7,8 +7,8 @@ the_post();
 <article class="container">
   <div class="page-container">
     <div class="page-title">
-      <h2>Reach out</h2>
-      <h1><?php the_title(); ?></h1>
+      <h3>Reach out</h3>
+      <h2><?php the_title(); ?></h2>
     </div>
 
     <div class="rte">

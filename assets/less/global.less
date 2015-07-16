@@ -1,38 +1,36 @@
 body {
   font-family: 'Muli', sans-serif;
   font-size: 14px;
-  color: @gray;
+  color: @darkGray;
 }
 
 a {
-  color: @red;
+  color: @blue;
   &:hover {
     text-decoration: none;
   }
 }
 
-h1 {
+// H1 should be reserved for the site title for SEO purposes, and <h2> used for page titles, h3 for subtitle, etc.
+h1, h2 {
   color: @blue;
   font-size: 36px;
   font-family: 'Merriweather', sans-serif;
   font-weight: 800;
+  a {
+    color: @blue;
+  }
 }
 
-h2 {
+h3 {
   color: @red;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 300;
 }
 
-h3 {
-  color: @red;
-  font-size: 18px;
-  font-weight: 300;
-}
-
 h4 {
-  color: @red;
+  color: @gray;
   font-size: 16px;
 }
 
