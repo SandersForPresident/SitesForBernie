@@ -28,7 +28,7 @@ install:
 script:
   - npm run build
   - npm run lint
-  - phpcs --standard=ruleset.xml --extensions=php -n -s .
+  - phpcs --standard=ruleset.xml --extensions=php -n -s --ignore=*/ansible/* .
 
 notifications:
   slack:
