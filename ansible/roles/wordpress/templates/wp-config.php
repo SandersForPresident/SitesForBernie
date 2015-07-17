@@ -72,6 +72,8 @@ define('WPLANG', '');
  * in their development environments.
  */
 define('WP_DEBUG', true);
+define('WP_HOME','http://' . $_SERVER['HTTP_HOST'] . '/');
+define('WP_SITEURL','http://' . $_SERVER['HTTP_HOST'] . '/');
 
 /** Disable Automatic Updates Completely */
 define( 'AUTOMATIC_UPDATER_DISABLED', {{auto_up_disable}} );

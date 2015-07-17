@@ -17,3 +17,6 @@
 - name: Copy php-fpm configuration
   template: src=wordpress.conf dest=/etc/php5/fpm/pool.d/
   notify: restart php5-fpm
+
+- name: Start php5-fpm
+  service: name=php5-fpm state=started enabled=true

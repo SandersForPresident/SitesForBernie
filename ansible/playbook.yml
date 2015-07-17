@@ -7,13 +7,8 @@
     - wordpress
 
   tasks:
-    - name: Link /vagrant/ to /srv/wordpress/wp-content/themes/SandersForPresident
-      file: name=/srv/wordpress/wp-content/themes/SandersForPresident src=/vagrant state=link
+    - name: "Link /vagrant/ to {{wp_path}}/wp-content/themes/SandersForPresident"
+      file: name={{wp_path}}/wp-content/themes/SandersForPresident src=/vagrant state=link
 
-    - name: Install svn
-      apt: name=subversion state=present update_cache=true
-
-    - name: Install Advanced Custom Fields plugin
-      subversion: repo=http://svn.wp-plugins.org/{{ item.name }}/{{ item.version }}/ dest=/srv/wordpress/wp-content/plugins/{{ item.name }}
-      with_items:
-        - { name: advanced-custom-fields, version: tags/4.4.1 }
+    - name: Activate SandersForPresident theme
+      command: wp theme activate SandersForPresident --allow-root --path={{wp_path}}
