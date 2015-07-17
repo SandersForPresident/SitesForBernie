@@ -38,7 +38,7 @@ class NewsFeedService {
   /**
    * Date comparison for a descending feed
    */
-  private function aggregateNewsSort($a, $b) {
+  private static function aggregateNewsSort($a, $b) {
     return strtotime($a->getDate()) < strtotime($b->getDate());
   }
 }
