@@ -31,14 +31,14 @@ class NewsFeedService {
     $remoteNewsFeed = $this->remoteNewsFeedService->getFeed();
     $localNewsFeed = $this->getLocalNewsFeed();
     $aggregatedNews = array_merge($remoteNewsFeed, $localNewsFeed);
-    usort($aggregatedNews, array(self, 'aggregateNewsSort'));
+    usort($aggregatedNews, array(__CLASS__, 'aggregateNewsSort'));
     return $aggregatedNews;
   }
 
   /**
    * Date comparison for a descending feed
    */
-  private function aggregateNewsSort($a, $b) {
+  private static function aggregateNewsSort($a, $b) {
     return strtotime($a->getDate()) < strtotime($b->getDate());
   }
 }
