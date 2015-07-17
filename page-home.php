@@ -7,8 +7,8 @@ the_post();
 <article class="container home">
   <div class="page-container">
     <div class="page-title">
-      <h2>Welcome To</h2>
-      <h1><?php the_title(); ?></h1>
+      <h3>Welcome To</h3>
+      <h2><?php the_title(); ?></h2>
     </div>
     <div class="row">
       <section class="left">

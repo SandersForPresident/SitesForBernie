@@ -9,15 +9,14 @@
 <div class="container blog list">
   <div class="page-container">
     <div class="page-title">
-      <h2>Find out what's going on near you</h2>
-      <h1>News</h1>
+      <h2>News</h2>
     </div>
 
     <?php foreach ($news as $item) : ?>
-      <article>
+      <article<?php if ($item->isRemote()) : ?> class="official"<?php endif; ?>>
+        <?php if ($item->isRemote()) : ?><h5>Official News</h5><?php endif; ?>
         <h2>
           <a href="<?php echo $item->getLink(); ?>">
-            <?php if ($item->isRemote()) : ?><span style="color: #277cc0;">BERNIE POST:</span><?php endif; ?>
             <?php echo $item->getTitle(); ?>
           </a>
         </h2>
