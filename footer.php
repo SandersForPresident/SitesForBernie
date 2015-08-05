@@ -29,12 +29,12 @@
           <div class="column">
             <h3>Bernie</h3>
             <ul>
-              <li><a href="#">Official Website</a></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Reddit</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">YouTube</a></li>
+              <li><a href="https://berniesanders.com">Official Website</a></li>
+              <li><a href="https://www.facebook.com/berniesanders">Facebook</a></li>
+              <li><a href="https://twitter.com/BernieSanders">Twitter</a></li>
+              <li><a href="https://www.reddit.com/r/SandersForPresident">Reddit</a></li>
+              <li><a href="https://instagram.com/berniesanders/">Instagram</a></li>
+              <li><a href="https://www.youtube.com/channel/UCH1dpzjCEiGAt8CXkryhkZg">YouTube</a></li>
             </ul>
           </div>
           <!-- end: Presidental Campaign Links -->
