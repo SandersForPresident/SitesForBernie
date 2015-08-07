@@ -1,9 +1,14 @@
 <?php
-use SandersForPresident\Wordpress\Admin\Messages\MessageService;
-$messageService = new MessageService();
+use SandersForPresident\Wordpress\Admin\Messages\MessageTable;
+$table = new MessageTable();
+$table->prepare_items();
 ?>
 
 <h1>YO</h1>
-<pre>
-  <?php echo $messageService->getMessages(); ?>
-</pre>
+<!--table class="wp-list-table widefat fixed striped pages">
+  <thead>
+
+  </thead>
+</table-->
+
+<?php $table->display(); ?>
