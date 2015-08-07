@@ -40,9 +40,9 @@ class MessageTable extends WP_List_Table {
 
   public function column_message_title($item) {
     $actions = array(
-      'view' => "<a href=\"?page={$_REQUEST['page']}&action=view&message={$item['id']}\">View</a>"
+      'view' => "<a href=\"?page={$_REQUEST['page']}&action=view&post={$item['id']}\">View</a>"
     );
-    return $item['title'] . $this->row_actions($actions, true);
+    return "<strong>{$item['title']}</strong>" . $this->row_actions($actions, false);
   }
 
   public function column_message_date() {
