@@ -23,6 +23,7 @@ class MessageTable extends WP_List_Table {
     return array(
       'cb' => '<input type="checkbox" />',
       'message_title' => 'Title',
+      'message_from' => 'From',
       'message_date' => 'Date'
     );
   }
@@ -49,6 +50,12 @@ class MessageTable extends WP_List_Table {
       'view' => "<a href=\"?page={$_REQUEST['page']}&action=view&post={$item['id']}\">View</a>"
     );
     return $title . $this->row_actions($actions, false);
+  }
+
+  public function column_message_from($item) {
+    $name = 'Atticus White';
+    $email = '<a href="#">contact@atticuswhite</a>';
+    return $name . "<br/>" . $email;
   }
 
   public function column_message_date() {
