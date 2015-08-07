@@ -6,6 +6,8 @@
 $sanders_includes = array(
   'lib/init.php',
   'lib/assets.php',
+  'lib/admin/messages/init.php',
+  'lib/admin/messages/service.php',
   'lib/services/news/remote_news_feed.php',
   'lib/services/news/news_feed.php',
   'lib/services/events/remote_events.php',
