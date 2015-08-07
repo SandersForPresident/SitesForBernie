@@ -21,21 +21,43 @@ class MessageTable extends WP_List_Table {
 
   public function get_columns() {
     return array(
+      'cb' => '<input type="checkbox" />',
       'message_id' => 'ID',
-      'message_title' => 'Title'
+      'message_title' => 'Title',
+      'message_date' => 'Date'
+    );
+  }
+
+  public function column_cb($item) {
+    return '<input type="checkbox" />';
+  }
+
+  public function column_message_id($item) {
+    return $item['id'];
+  }
+
+  public function column_message_title($item) {
+    return $item['title'];
+  }
+
+  public function column_message_date() {
+    return "August 04, 2015 11:00pm";
+  }
+
+  public function get_sortable_columns() {
+    return array(
+      'message_title' => array('message_title', false)
+    );
+  }
+
+  public function get_bulk_actions() {
+    return array(
+      'delete' => 'Delete'
     );
   }
 
   public function prepare_items() {
+    $this->_column_headers = array($this->get_columns(), array(), array());
     $this->items = $this->service->getMessages();
-  }
-
-  public function display_rows() {
-    foreach ($this->items as $message) {
-      echo "<tr>";
-      echo "<td>{$message['id']}</td>";
-      echo "<td>{$message['title']}</td>";
-      echo "</tr>";
-    }
   }
 }
