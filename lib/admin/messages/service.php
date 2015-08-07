@@ -5,10 +5,21 @@ namespace SandersForPresident\Wordpress\Admin\Messages;
 class MessageService {
   const POST_TYPE_SLUG = 'contact_message';
 
+  private $mocks = array (
+    array('id' => 1, 'title' => 'A new message', 'body' => 'This is my message'),
+    array('id' => 2, 'title' => 'Another meessage', 'body' => 'This is just another one')
+  );
+
   public function getMessages() {
-    return array (
-      array('id' => 1, 'title' => 'A new message', 'body' => 'This is my message'),
-      array('id' => 2, 'title' => 'Another meessage', 'body' => 'This is just another one')
-    );
+    return $this->mocks;
+  }
+
+  public function getMessage($id) {
+    foreach ($this->mocks as $mock) {
+      if ($mock['id'] == $id) {
+        return $mock;
+      }
+    }
+    return null;
   }
 }
