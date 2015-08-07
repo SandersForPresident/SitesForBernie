@@ -68,3 +68,22 @@ function acf_json_load($paths) {
   return $paths;
 }
 add_filter('acf/settings/load_json', __NAMESPACE__ . '\\acf_json_load');
+
+/**
+ * Custom post types
+ */
+function custom_post_types() {
+  $args = array (
+    'labels' => array(
+      'name' => 'Messages',
+      'singular_name' => 'Message'
+    ),
+    'public' => false,
+    'publicly_queryable' => false,
+    'show_ui' => false,
+    'show_in_menu' => false,
+    'query_var' => false
+  );
+  register_post_type('contact_message', $args);
+}
+add_action('init', __NAMESPACE__ . '\\custom_post_types');
