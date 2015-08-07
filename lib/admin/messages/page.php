@@ -11,4 +11,7 @@ $table->prepare_items();
   </thead>
 </table-->
 
-<?php $table->display(); ?>
+<form method="post">
+  <?php $table->views(); ?>
+  <?php $table->display(); ?>
+</form>

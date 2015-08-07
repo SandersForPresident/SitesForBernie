@@ -22,22 +22,27 @@ class MessageTable extends WP_List_Table {
   public function get_columns() {
     return array(
       'cb' => '<input type="checkbox" />',
-      'message_id' => 'ID',
       'message_title' => 'Title',
       'message_date' => 'Date'
     );
   }
 
-  public function column_cb($item) {
-    return '<input type="checkbox" />';
+  public function get_views() {
+    return array(
+      'all' => '<a href="#">All</a>',
+      'trash' => '<a href="#">Trash</a>'
+    );
   }
 
-  public function column_message_id($item) {
-    return $item['id'];
+  public function column_cb($item) {
+    return "<input type=\"checkbox\" name=\"message[]\" value=\"{$item}\" />";
   }
 
   public function column_message_title($item) {
-    return $item['title'];
+    $actions = array(
+      'view' => "<a href=\"?page={$_REQUEST['page']}&action=view&message={$item['id']}\">View</a>"
+    );
+    return $item['title'] . $this->row_actions($actions, true);
   }
 
   public function column_message_date() {
@@ -59,5 +64,9 @@ class MessageTable extends WP_List_Table {
   public function prepare_items() {
     $this->_column_headers = array($this->get_columns(), array(), array());
     $this->items = $this->service->getMessages();
+    $this->set_pagination_args(array(
+      'total_items' => count($this->items),
+      'per_page' => 10
+    ));
   }
 }
