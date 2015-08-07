@@ -36,30 +36,30 @@ class MessageTable extends WP_List_Table {
   }
 
   public function column_cb($item) {
-    return "<input type=\"checkbox\" name=\"message[]\" value=\"{$item}\" />";
+    return "<input type=\"checkbox\" name=\"message[]\" value=\"{$item->id}\" />";
   }
 
   public function column_message_title($item) {
-    if (!$item['read']) {
-      $title = "<strong>{$item['title']}</strong>";
+    if (!$item->read) {
+      $title = "<strong>{$item->title}</strong>";
     } else {
-      $title = $item['title'];
+      $title = $item->title;
     }
 
     $actions = array(
-      'view' => "<a href=\"?page={$_REQUEST['page']}&action=view&post={$item['id']}\">View</a>"
+      'view' => "<a href=\"?page={$_REQUEST['page']}&action=view&post={$item->id}\">View</a>"
     );
     return $title . $this->row_actions($actions, false);
   }
 
   public function column_message_from($item) {
-    $name = 'Atticus White';
-    $email = '<a href="#">contact@atticuswhite</a>';
+    $name = $item->from['name'];
+    $email = "<a href=\"mailto:{$item->from['email']}\">{$item->from['email']}</a>";
     return $name . "<br/>" . $email;
   }
 
-  public function column_message_date() {
-    return "August 04, 2015 11:00pm";
+  public function column_message_date($item) {
+    return $item->getDate();
   }
 
   public function get_sortable_columns() {

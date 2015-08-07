@@ -9,6 +9,7 @@ $sanders_includes = array(
   'lib/admin/messages/init.php',
   'lib/admin/messages/service.php',
   'lib/admin/messages/table.php',
+  'lib/admin/messages/model.php',
   'lib/services/news/remote_news_feed.php',
   'lib/services/news/news_feed.php',
   'lib/services/events/remote_events.php',

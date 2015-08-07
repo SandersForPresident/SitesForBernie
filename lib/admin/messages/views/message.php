@@ -13,9 +13,9 @@ $message = $service->getMessage($_REQUEST['post']);
 
       <div id="post-body-content">
         <div class="postbox">
-          <h3 class="hndle "><?php echo $message['title']; ?></h3>
+          <h3 class="hndle "><?php echo $message->title; ?></h3>
           <div class="inside">
-            <?php echo $message['body']; ?>
+            <?php echo $message->getBody(); ?>
           </div>
         </div>
       </div>
@@ -29,15 +29,15 @@ $message = $service->getMessage($_REQUEST['post']);
               <div id="misc-publishing-actions">
                 <div class="misc-pub-section">
                   <label style="font-weight:bold;">From:</label>
-                  <span>Atticus White</span>
+                  <span><?php echo $message->from['name']; ?></span>
                 </div>
                 <div class="misc-pub-section">
                   <label style="font-weight:bold;">Email:</label>
-                  <span>contact@atticuswhite.com</span>
+                  <span><?php echo $message->from['email']; ?></span>
                 </div>
                 <div class="misc-pub-section">
                   <label style="font-weight:bold;">Date:</label>
-                  <span>August 04 2015, 11:00pm</span>
+                  <span><?php echo $message->getDate(); ?></span>
                 </div>
               </div>
 
