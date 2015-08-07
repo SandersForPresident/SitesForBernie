@@ -15,7 +15,7 @@ class HeaderModel extends BaseModel {
 
   public function getLogo() {
     if ($this->logo) {
-      return $this->logo['sizes']['thumbnail'];
+      return $this->logo['url'];
     } else {
       return get_template_directory_uri() . self::DEFAULT_LOGO;
     }
