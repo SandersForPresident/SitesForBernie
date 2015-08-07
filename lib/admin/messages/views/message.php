@@ -1,9 +1,9 @@
 <?php
 use SandersForPresident\Wordpress\Admin\Messages\MessageService;
 $service = new MessageService();
-
 $message = $service->getMessage($_REQUEST['post']);
 ?>
+
 <div class="wrap">
 
   <h2>View Message</h2>
@@ -54,9 +54,6 @@ $message = $service->getMessage($_REQUEST['post']);
           </div>
         </div>
       </div>
-
-
-
     </div>
   </div>
 </div>
