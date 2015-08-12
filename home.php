@@ -14,7 +14,7 @@
 
     <?php foreach ($news as $item) : ?>
       <article<?php if ($item->isRemote()) : ?> class="official"<?php endif; ?>>
-        <?php if ($item->isRemote()) : ?><h5>Official News</h5><?php endif; ?>
+        <?php if ($item->isRemote()) : ?><h5>Campaign News</h5><?php endif; ?>
         <h2>
           <a href="<?php echo $item->getLink(); ?>">
             <?php echo $item->getTitle(); ?>
