@@ -20,7 +20,10 @@
     </div>
 
     <section>
-      <h3>Looking for events in your area? <strong>There are <?php echo intval($localEvents->settings->count); ?> local events out of <?php echo intval($events->settings->count); ?> total events.</strong></h3>
+      <h3>
+        Looking for events in your area?<br/>
+        <strong>There are <?php echo intval($localEvents->settings->count); ?> local events out of <?php echo intval($events->settings->count); ?> total events.</strong>
+      </h3>
 
 
       <?php foreach ($localEvents->results as $event) : ?>

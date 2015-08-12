@@ -37,7 +37,7 @@ class RemoteEventService {
   }
 
   public function getLocalEvents() {
-    $state = 'MA'; //get_field('site_state_abbr', 'option');
+    $state = get_field('site_state_abbreviation', 'option');
     return $this->searchEvents($state);
   }
 
