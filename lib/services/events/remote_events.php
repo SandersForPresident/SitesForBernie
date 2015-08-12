@@ -24,21 +24,21 @@ class RemoteEventService {
   /**
    * Searches events within an area
    */
-  public function searchEvents($zip) {
-    $events = $this->loadCache($zip);
+  public function searchEvents($state) {
+    $events = $this->loadCache($state);
     if ($events) {
       return $events;
     } else {
-      $params = $this->constructSearchParams($zip);
+      $params = $this->constructSearchParams($state);
       $events = $this->makeRequest($params);
-      $this->updateCache($events, $zip);
+      $this->updateCache($events, $state);
       return $events;
     }
   }
 
   public function getLocalEvents() {
-    $zip = 20003; //get_field('site_zip', 'option');
-    return $this->searchEvents($zip);
+    $state = 'MA'; //get_field('site_state_abbr', 'option');
+    return $this->searchEvents($state);
   }
 
   /**
@@ -68,12 +68,11 @@ class RemoteEventService {
   /**
    * Construct the search request params
    */
-  private function constructSearchParams($zip) {
+  private function constructSearchParams($state) {
     return array(
+      'state' => $state,
       'orderby' => 'date',
-      'zip_radius' => array($zip, 100),
       'country' => 'US',
-      'radius_unit' => 'mi',
       'format' => 'json'
     );
   }
