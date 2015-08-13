@@ -41,16 +41,16 @@
 
           <!-- Organization Links -->
           <div class="column">
-            <?php if ($footer->hasRightNavigation()) : ?>
-            <h3><?php echo $footer->rightNavigation->title; ?></h3>
+            <h3>Organize</h3>
             <ul>
-              <?php foreach ($footer->rightNavigation->items as $item) : ?>
-                <li>
-                  <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
-                </li>
-              <?php endforeach; ?>
+              <li><a href="https://secure.actblue.com/contribute/page/lets-go-bernie" title="Donate to the Bernie Sanders campaign">Contribute</a></li>
+              <li><a href="https://go.berniesanders.com/page/s/join" title="Sign Up to receive updates about Bernie Sanders's campign">Sign Up</a></li>
+              <li><a href="https://go.berniesanders.com/page/signup/volunteer-for-bernie" title="Volunteer to help Bernie Sander's campaign">Volunteer</a></li>
+              <li><a href="https://go.berniesanders.com/page/event/search_simple" title="Find an event to attend in support of Bernie Sanders">Events</a></li>
+              <li><a href="https://berniesanders.com/organize/" title="Organize an event">Organizing Hub</a></li>
+              <li><a href="https://store.berniesanders.com/" title="Purchase Bernie Sanders merchandise">Store</a></li>
+              <li><a href="https://berniesanders.com/jobswithbernie2016/" title="Find a job with the Bernie Sanders campaign">Jobs</a></li>
             </ul>
-            <?php endif; ?>
           </div>
           <!-- end: Oragnization Links -->
 
