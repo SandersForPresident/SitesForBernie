@@ -24,8 +24,7 @@ add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 function nav_menus_init() {
   register_nav_menus(array(
     'header' => 'Site Navigation',
-    'footer_social' => 'Social Links',
-    'footer_organize' => 'Organize Links'
+    'footer_social' => 'Social Links'
   ));
 }
 add_action('init', __NAMESPACE__ . '\\nav_menus_init');
