@@ -61,10 +61,11 @@ class HeaderModel extends BaseModel {
 
   public function hasNotificationTitle() {
     if ($this->displayLatestCampaignNews) {
-      return !empty($this->newsItem->getTitle());
+      $title = $this->newsItem->getTitle();
     } else {
-      return !empty($this->notificationTitle);
+      $title = $this->notificationTitle;
     }
+    return !empty($title);
   }
 
   public function getNotificationTitle() {
