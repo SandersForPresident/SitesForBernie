@@ -6,6 +6,7 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
   <head>
+  	<title><?php wp_title('|', true, 'right'); ?></title>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,9 +37,14 @@
       <div class="container">
         <div class="border-wrap">
           <a href="/" class="logo"><img src="<?php echo $header->getLogo(); ?>" /></a>
+          <a href="#" class="responsive-nav-toggle">
+            <span class="bar-1"></span>
+            <span class="bar-2"></span>
+            <span class="bar-3"></span>
+          </a>
           <nav>
             <?php wp_nav_menu(array('theme_location' => 'header', 'container' => false)); ?>
-            <a href="https://secure.actblue.com/contribute/page/lets-go-bernie" class="button">Contribute</a>
+            <a href="https://secure.actblue.com/contribute/page/lets-go-bernie" class="button contribute">Contribute</a>
           </nav>
         </div>
       </div>
