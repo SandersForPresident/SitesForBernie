@@ -1,0 +1,54 @@
+---
+
+- name: "Add {{wp_url}} host to /etc/hosts"
+  lineinfile: dest=/etc/hosts line='127.0.0.1 {{wp_url}}' owner=root group=root mode=0644
+
+- name: Add group "wordpress"
+  group: name=wordpress
+
+- name: Add user "wordpress"
+  user: name=wordpress group=wordpress home={{wp_path}}
+
+- name: install php5-cli
+  apt: name=php5-cli state=present update_cache=true
+
+- name: install wp-cli
+  get_url: url={{wp_cli_url}} dest={{wp_cli_bin}} mode=0755
+
+- name: download wordpress
+  command: wp core download --path={{wp_path}} --version={{wp_version}} --allow-root
+  args:
+    creates: "{{wp_path}}/index.php"
+
+- name: Create WordPress database
+  mysql_db: name={{ wp_db_name }} state=present
+
+- name: Create WordPress database user
+  mysql_user: name={{ wp_db_user }} password={{ wp_db_password }} priv={{ wp_db_name }}.*:ALL host='localhost' state=present
+
+- name: Fetch random salts for WordPress config
+  local_action: command curl https://api.wordpress.org/secret-key/1.1/salt/
+  register: "wp_salt"
+  sudo: no
+
+- name: Copy WordPress config file
+  template: src=wp-config.php dest={{wp_path}}
+
+- name: Is WordPress installed?
+  command: wp core is-installed --path={{wp_path}} --allow-root
+  register: wp_is_installed
+  ignore_errors: true
+
+- name: install WordPress
+  command: wp core install --path={{wp_path}} --url={{wp_url}} --title="{{wp_title}}" --admin_user={{wp_admin_user}} --admin_password={{wp_admin_password}} --admin_email={{wp_admin_email}} --allow-root
+  when: wp_is_installed|failed
+
+- name: install wordpress plugins
+  command: wp plugin install {{item.name}} --version={{item.version}} --activate --path={{wp_path}} --allow-root
+  args:
+    creates: "{{wp_path}}/wp-content/plugins/{{item.name}}"
+  with_items: wp_plugins
+  when: wp_plugins is defined
+
+- name: Change ownership of WordPress installation
+  file: path={{wp_path}} owner=wordpress group=wordpress state=directory recurse=yes

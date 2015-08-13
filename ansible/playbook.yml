@@ -1,0 +1,14 @@
+- hosts: all
+  sudo: true
+  roles:
+    - mysql
+    - nginx
+    - php-fpm
+    - wordpress
+
+  tasks:
+    - name: "Link /vagrant/ to {{wp_path}}/wp-content/themes/SandersForPresident"
+      file: name={{wp_path}}/wp-content/themes/SandersForPresident src=/vagrant state=link
+
+    - name: Activate SandersForPresident theme
+      command: wp theme activate SandersForPresident --allow-root --path={{wp_path}}

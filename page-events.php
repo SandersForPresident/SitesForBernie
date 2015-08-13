@@ -14,19 +14,25 @@
   <div class="page-container">
     <div class="page-title">
       <?php if ($EventPageModel->subtitle) : ?>
-        <h2><?php echo $EventPageModel->subtitle; ?></h2>
+        <h3><?php echo $EventPageModel->subtitle; ?></h3>
       <?php endif; ?>
-      <h1><?php echo $EventPageModel->title; ?></h1>
+      <h2><?php echo $EventPageModel->title; ?></h2>
     </div>
 
-    <article>
-      <h3>Looking for events in your area? <strong>There are <?php echo intval($localEvents->settings->count); ?> local events out of <?php echo intval($events->settings->count); ?> total events.</strong></h3>
+    <section>
+      <h3>
+        Looking for events in your area?<br/>
+        <strong>There are <?php echo intval($localEvents->settings->count); ?> local events out of <?php echo intval($events->settings->count); ?> total events.</strong>
+      </h3>
 
 
       <?php foreach ($localEvents->results as $event) : ?>
         <article>
-          <h2><a href="<?php echo $event->url; ?>"><?php echo $event->name; ?></a></h2>
-          <h4><?php echo date('l F j, Y', strtotime($event->start_dt)); ?></h4>
+          <h3><a href="<?php echo $event->url; ?>"><?php echo $event->name; ?></a></h3>
+          <h4>
+            <?php echo date('l F j, Y', strtotime($event->start_dt)); ?><br/>
+            <?php echo $event->venue_city; ?>, <?php echo $event->venue_state_cd; ?>
+          </h4>
           <div class="rte">
             <p>
               <?php echo $event->description; ?>
@@ -39,7 +45,7 @@
       <p>
         Head on over to the campaign's <a href="https://go.berniesanders.com/page/event/search_simple">Event Manager</a> to find an event near you!
       </p>
-    </article>
+    </section>
 
   </div>
 </div>

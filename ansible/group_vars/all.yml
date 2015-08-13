@@ -1,0 +1,38 @@
+---
+# Which version of WordPress to deploy
+wp_version: 4.2.2
+wp_path: /srv/wordpress/
+
+# WP Install config
+
+wp_url: sanders.local
+wp_title: SandersForPresident Vagrant WordPress Install
+wp_admin_user: admin
+wp_admin_password: secret
+wp_admin_email: vagrant@sanders.local
+
+# These are the WordPress database settings
+wp_db_name: wordpress
+wp_db_user: wordpress
+wp_db_password: secret
+
+# WP-CLI bin and url info for downloading
+wp_cli_bin: /usr/bin/wp
+wp_cli_url: https://raw.github.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+# WordPress Plugins
+wp_plugins:
+  - { name: advanced-custom-fields, version: 4.4.1 }
+
+# You shouldn't need to change this.
+mysql_port: 3306
+
+# Disable All Updates
+# By default automatic updates are enabled, set this value to true to disable all automatic updates
+auto_up_disable: false
+
+#Define Core Update Level
+#true  = Development, minor, and major updates are all enabled
+#false = Development, minor, and major updates are all disabled
+#minor = Minor updates are enabled, development, and major updates are disabled
+core_update_level: true

@@ -8,6 +8,28 @@ This is a reusable theme for Bernie Sanders campaign microsites.
 
 Clone the git repo `git@github.com:SandersForPresident/Wordpress.git` and then rename the directory to the name of your theme or website.
 
+* Install and Activate https://wordpress.org/plugins/advanced-custom-fields/
+
+## Using Vagrant for local development
+
+Vagrant will create a virtual machine for local development.  You will need to install three packages:
+
+* [Vagrant](http://www.vagrantup.com/downloads.html)
+* [Anisble](http://docs.ansible.com/intro_installation.html)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+After setting up these three packages, you will be able to run the following command locally to create your own virutal server:
+
+```shell
+vagrant up
+```
+
+After it downloads a linux VM and configures it, you should be able to point your browser at http://192.168.33.10/ and get a local copy of the theme running.  The WordPress admin will be setup with a username of `admin` and a password of `secret`.
+
+If you want to look around on the server you can `vagrant ssh` and to shut off the server when you aren't using it you can `vagrant halt`.  If you want to destroy the VM entirey (start fresh, wipe database, etc) you can `vagrant destroy`.
+
+You can customize the installation a bit by looking at the [ansible variables](ansible/group_vars/all.yml)
+
 ## Theme Development
 
 SandersForPresident uses [gulp](gulp) as a build system and [bower](bower) as a front end package manager.

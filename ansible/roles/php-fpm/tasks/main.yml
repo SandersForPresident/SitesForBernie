@@ -1,0 +1,22 @@
+---
+- name: Install php-fpm and deps
+  apt: name={{ item }} state=present update_cache=true
+  with_items:
+    - php5
+    - php5-fpm
+    - php5-mysql
+
+- name: Ensure php5-fpm run directory
+  file: name=/var/run/php5-fpm/ state=directory mode=0777
+  notify: restart php5-fpm
+
+- name: Disable default pool
+  command: mv /etc/php5/fpm/pool.d/www.conf /etc/php5/fpm/pool.d/www.disabled creates=/etc/php5/fpm/pool.d/www.disabled
+  notify: restart php5-fpm
+
+- name: Copy php-fpm configuration
+  template: src=wordpress.conf dest=/etc/php5/fpm/pool.d/
+  notify: restart php5-fpm
+
+- name: Start php5-fpm
+  service: name=php5-fpm state=started enabled=true
