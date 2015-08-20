@@ -12,7 +12,7 @@
     "url": "git@github.com:SandersForPresident/Wordpress.git"
   },
   "author": "Atticus White <contact@atticuswhite.com> (http://atticuswhite.com/)",
-  "license": "MIT",
+  "license": "AGPL",
   "bugs": {
     "url": "https://github.com/SandersForPresident/Wordpress/issues"
   },
