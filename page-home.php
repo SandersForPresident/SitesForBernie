@@ -20,7 +20,7 @@ the_post();
       </section>
       <aside class="right">
         <div class="bernie-face">
-          <img src="https://votesmart.org/canphoto/27110_lg.jpg" />
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bernieface.jpg" />
         </div>
         <div class="quote">
           <p>
