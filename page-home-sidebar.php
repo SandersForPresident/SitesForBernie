@@ -19,9 +19,9 @@ the_post();
         </section>
       </div>
       <div class="col-md-3">
-        <?php if (dynamic_sidebar( 'page' ) ); ?>
+        <?php if (dynamic_sidebar('page')); ?>
       </div>
-    </div>
+  </div>
 </article>
 
 <?php get_footer(); ?>
