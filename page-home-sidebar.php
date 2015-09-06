@@ -19,8 +19,7 @@ the_post();
         </section>
       </div>
       <div class="col-md-3">
-        <?php if (dynamic_sidebar('page')); ?>
-        <?php endif; ?>
+        <?php dynamic_sidebar('page'); ?>
       </div>
   </div>
 </article>
