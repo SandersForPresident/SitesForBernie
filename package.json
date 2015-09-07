@@ -1,7 +1,7 @@
 {
   "name": "SandersForPresident",
   "version": "1.0.0",
-  "description": "SandersForPresident resuable WordPress theme",
+  "description": "SandersForPresident reusable WordPress theme",
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
