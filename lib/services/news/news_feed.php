@@ -14,7 +14,7 @@ class NewsFeedService {
    * Fetches the local news feed.
    * Note: currently MUST utilize The Loop
    */
-  private function getLocalNewsFeed() {
+  public function getLocalNewsFeed() {
     global $post;
     $articles = array();
     while (have_posts()) {
