@@ -5,6 +5,7 @@
     - nginx
     - php-fpm
     - wordpress
+    - wordpress-seed
 
   tasks:
     - name: "Link /vagrant/ to {{wp_path}}/wp-content/themes/SandersForPresident"

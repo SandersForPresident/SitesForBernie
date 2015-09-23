@@ -1,0 +1,60 @@
+---
+
+- name: create wordpress home page
+  command: wp post create --post_type=page --post_title='Localhost for Bernie Sanders' --post_content='Hello World' --post_status='publish' --url={{wp_url}} --path={{wp_path}} --porcelain --allow-root
+  register: wp_home_page
+  ignore_errors: true
+  when: wp_is_installed|failed
+
+- name: create wordpress blog page
+  command: wp post create --post_type=page --post_title='News' --post_content='Your News' --post_status='publish' --url={{wp_url}} --path={{wp_path}} --porcelain --allow-root
+  register: wp_blog_page
+  ignore_errors: true
+  when: wp_is_installed|failed
+
+- name: create wordpress events page
+  command: wp post create --post_type=page --post_title='Events' --post_content='Localize events' --post_status='publish' --url={{wp_url}} --path={{wp_path}} --porcelain --allow-root
+  register: wp_event_page
+  ignore_errors: true
+  when: wp_is_installed|failed
+
+- name: create wordpress contact page
+  command: wp post create --post_type=page --post_title='Contact Us' --post_content='The contact page' --post_status='publish' --url={{wp_url}} --path={{wp_path}} --porcelain --allow-root
+  register: wp_contact_page
+  ignore_errors: true
+  when: wp_is_installed|failed
+
+- name: create wordpress about page
+  command: wp post create --post_type=page --post_title='About Us' --post_content='The about page' --post_status='publish' --url={{wp_url}} --path={{wp_path}} --porcelain --allow-root
+  register: wp_about_page
+  ignore_errors: true
+  when: wp_is_installed|failed
+
+
+- name: update wordpress home page template
+  command: wp post meta set {{wp_home_page.stdout}} _wp_page_template page-home.php --url={{wp_url}} --path={{wp_path}} --allow-root
+  when: wp_is_installed|failed
+
+- name: update wordpress event page template
+  command: wp post meta set {{wp_event_page.stdout}} _wp_page_template page-events.php --url={{wp_url}} --path={{wp_path}} --allow-root
+  when: wp_is_installed|failed
+
+- name: update wordpress contact page template
+  command: wp post meta set {{wp_contact_page.stdout}} _wp_page_template page-contact.php --url={{wp_url}} --path={{wp_path}} --allow-root
+  when: wp_is_installed|failed
+
+- name: update wordpress about page template
+  command: wp post meta set {{wp_about_page.stdout}} _wp_page_template page-about.php --url={{wp_url}} --path={{wp_path}} --allow-root
+  when: wp_is_installed|failed
+
+- name: update wordpress option show_on_front
+  command: wp option update show_on_front 'page' --url={{wp_url}} --path={{wp_path}} --allow-root
+  when: wp_is_installed|failed
+
+- name: update wordpress option page_on_front
+  command: wp option update page_on_front {{wp_home_page.stdout}} --url={{wp_url}} --path={{wp_path}} --allow-root
+  when: wp_is_installed|failed
+
+- name: update wordpress option page_for_posts
+  command: wp option update page_for_posts {{wp_blog_page.stdout}} --url={{wp_url}} --path={{wp_path}} --allow-root
+  when: wp_is_installed|failed
