@@ -15,9 +15,9 @@
       <h2>News</h2>
     </div>
 
-    <div class="row">
+    <div class="news <?php if (empty($localNews)) { echo 'no-local'; } ?>">
 
-      <div class="col-md-6">
+      <div class="local">
         <h2>Local News</h2>
         <?php foreach ($localNews as $item): ?>
         <article>
@@ -34,7 +34,7 @@
         <?php endforeach; ?>
       </div>
 
-      <div class="col-md-6">
+      <div class="remote">
         <h2>Campaign News</h2>
         <?php foreach ($remoteNews as $item): ?>
         <article>
