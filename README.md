@@ -32,14 +32,14 @@ You can customize the installation a bit by looking at the [ansible variables](a
 
 ## Theme Development
 
-SandersForPresident uses [gulp](gulp) as a build system and [bower](bower) as a front end package manager.
+SandersForPresident uses [gulp][gulp] as a build system and [bower][bower] as a front end package manager.
 
 ### Install gulp and bower
-Building the theme requires [node.js](node). We recommend you update to the latest version of npm: `npm install -g npm@latest`.
+Building the theme requires [node.js][node]. We recommend you update to the latest version of npm: `npm install -g npm@latest`.
 
 From the command line:
 
-1. Install [gulp](gulp) and [bower](bower) globally with `npm install -g gulp bower`
+1. Install [gulp][gulp] and [bower][bower] globally with `npm install -g gulp bower`
 2. Run `npm install` in the theme directory
 3. Run `bower install`
 
@@ -52,9 +52,9 @@ The following gulp tasks are available:
 - `gulp watch` -- Rebuild the assets when the source files change
 
 ## Contributing
-Contributions are encouraged and welcome by everyone! We have [contributing guidelines](contributing) to help get you started.
+Contributions are encouraged and welcome by everyone! We have [contributing guidelines][contributing] to help get you started.
 
-[gulp]:(http://gulpjs.com/)
-[bower]:(http://bower.io/)
-[node]:(https://nodejs.org/download/)
-[contributing]:(https://github.com/SandersForPresident/Wordpress/blob/master/CONTRIBUTING.md)
+[gulp]:http://gulpjs.com/
+[bower]:http://bower.io/
+[node]:https://nodejs.org/download/
+[contributing]:https://github.com/SandersForPresident/Wordpress/blob/master/CONTRIBUTING.md
