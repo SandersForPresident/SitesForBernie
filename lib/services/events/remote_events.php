@@ -15,7 +15,7 @@ class RemoteEventService {
       return $events;
     } else {
       $params = $this->constructListParams();
-      $events = $this->makeRequest($params);
+      $events = $this->makeRequest($params, true);
       $this->updateCache($events);
       return $events;
     }
@@ -44,10 +44,18 @@ class RemoteEventService {
   /**
    * Performs the request for the events
    */
-  private function makeRequest($params = array()) {
+  private function makeRequest($params = array(), $count_only = false) {
     $requestUri = self::FEED_ENDPOINT;
     $requestUri .= '?' . http_build_query($params);
-    $response = file_get_contents($requestUri);
+    if ($count_only) {
+      // still waits for entire HTTP request, but chops off output
+      // so we don't have to parse through ALL that JSON just to get the count
+      // read the first 115 characters then patch it up.
+      $response = file_get_contents($requestUri, false, null, -1, 115);
+      $response = preg_replace('/\}\,.*/', '}}', $response);
+    } else {
+      $response = file_get_contents($requestUri);
+    }
     return json_decode($response);
   }
 
