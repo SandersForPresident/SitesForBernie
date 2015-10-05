@@ -1,12 +1,12 @@
 # SandersForPresident WordPress Theme
 
-![build status](https://api.travis-ci.org/SandersForPresident/WordPress.svg)
+![build status](https://api.travis-ci.org/SandersForPresident/SitesForBernie.svg)
 
 This is a reusable theme for Bernie Sanders campaign microsites.
 
 ## Installing
 
-Clone the git repo `git@github.com:SandersForPresident/Wordpress.git` and then rename the directory to the name of your theme or website.
+Clone the git repo `git@github.com:SandersForPresident/SitesForBernie.git` and then rename the directory to the name of your theme or website.
 
 * Install and Activate https://wordpress.org/plugins/advanced-custom-fields/
 
