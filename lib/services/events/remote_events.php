@@ -47,7 +47,7 @@ class RemoteEventService {
   private function makeRequest($params = array(), $count_only = false) {
     $requestUri = self::FEED_ENDPOINT;
     $requestUri .= '?' . http_build_query($params);
-    if($count_only){
+    if ($count_only){
       // still waits for entire HTTP request, but chops off output
       // so we don't have to parse through ALL that JSON just to get the count
       // read the first 115 characters then patch it up.
