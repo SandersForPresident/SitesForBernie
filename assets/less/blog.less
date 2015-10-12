@@ -1,0 +1,25 @@
+.blog {
+  .news {
+    .local, .remote {
+      .make-md-column(6);
+
+      article {
+        h2 {
+          font-size: 20px;
+          margin-bottom: 0;
+        }
+        h4 {
+          margin-top: 0;
+        }
+      }
+    }
+    &.no-local {
+      .local {
+        display: none;
+      }
+      .remote {
+        .make-md-column(12);
+      }
+    }
+  }
+}
