@@ -19,7 +19,9 @@ class LocalNewsArticle extends AbstractNewsArticle {
   }
 
   public function getDate() {
-    return $this->post->post_modified;
+      $t = $this->post->post_date_gmt;
+      // make sure it looks like a UTC datetime.
+      return substr($t,0,10).'T'.substr($t,11).'Z';
   }
 
   public function getLink() {
